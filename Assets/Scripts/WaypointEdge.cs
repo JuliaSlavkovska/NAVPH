@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 public class WaypointEdge : MonoBehaviour
 {
@@ -28,8 +28,7 @@ public class WaypointEdge : MonoBehaviour
     {
         if (directions.Length > 0)
         {
-            Random random = new Random();
-            int randomNumber = random.Next(0, directions.Length);
+            int randomNumber = Random.Range(0, directions.Length);
             Debug.Log(randomNumber);
             return directions[randomNumber];
         }

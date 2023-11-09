@@ -5,10 +5,8 @@ using UnityEngine;
 public class CarMover : MonoBehaviour
 {
     // Uklada referenciu na waypoint system ktory tento objekt pouziva
-    private WaypointEdge[] waipointsEdge;
     private WaypointEdge currentWaypoint;
     private WaypointEdge nextWaypoint;
-    [SerializeField] private WaypointsAll waypointsAll;
     [SerializeField] private float moveSpeed = 10f;
     [SerializeField] private float rotateSpeed = 4f;
     private Quaternion rotationGoal;
@@ -16,12 +14,6 @@ public class CarMover : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // nastavi vychodziu poziciu na 1. waypoint
-
-        currentWaypoint = waypointsAll.getFirstEdge();
-        transform.LookAt(currentWaypoint.transform);
-        transform.position = currentWaypoint.transform.position;
-
         //nastavi dalsi waypoint ciel
         //nextWaypoint = currentWaypoint.GetNext();
         //transform.position = nextWaypoint.transform.position;
@@ -65,5 +57,10 @@ public class CarMover : MonoBehaviour
         rotationGoal = Quaternion.LookRotation(directionToWaypoint);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotationGoal, rotateSpeed * Time.deltaTime);
 
+    }
+
+    public void setWaypoint(WaypointEdge waypoint)
+    {
+        currentWaypoint = waypoint;
     }
 }

@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
-public class WaypointsAll : MonoBehaviour
+public class Crossroad : MonoBehaviour
 {
-    [SerializeField] private WaypointEdge[] waipointsEdges;
+    [SerializeField] private List<WaypointEdge> waypointsEdges = new List<WaypointEdge>();
     // Start is called before the first frame update
 
     public Transform GetNextWaypoint(WaypointEdge currentWaypoint)
@@ -15,7 +16,12 @@ public class WaypointsAll : MonoBehaviour
 
     public WaypointEdge getFirstEdge()
     {
-        return waipointsEdges[7];
+        return waypointsEdges[7];
+    }
+
+    public WaypointEdge getRandomEdge()
+    {
+        return waypointsEdges[Random.Range(0, waypointsEdges.Count)];
     }
 
     void Start()
