@@ -29,7 +29,7 @@ public class WaypointEdge : MonoBehaviour
         if (directions.Length > 0)
         {
             int randomNumber = Random.Range(0, directions.Length);
-            Debug.Log(randomNumber);
+            
             return directions[randomNumber];
         }
         else

@@ -40,11 +40,11 @@ public class GameController : MonoBehaviour
 
 
         GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Count)]);
+        newCar.GetComponent<CarMover>().setWaypoint(waypoint);
         newCar.transform.parent = allCars.transform;
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;
-        newCar.GetComponent<CarMover>().setWaypoint(waypoint);
 
         
     }
