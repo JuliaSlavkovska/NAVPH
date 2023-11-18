@@ -5,11 +5,11 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     Vector2 rotation = Vector2.zero;
-    public float speed = 3;
+    [SerializeField] private float speed = 3;
 
     void Update () {
         rotation.y += Input.GetAxis ("Mouse X");
-        //rotation.x += -Input.GetAxis ("Mouse Y");
-        transform.eulerAngles = (Vector2)rotation * speed;
+        transform.localRotation = Quaternion.Euler(transform.eulerAngles.x, rotation.y * speed, transform.eulerAngles.z);
+        //transform.eulerAngles = (Vector2)rotation * speed;
     }
 }

@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private float timer;
     private List<Transform> rlights = new List<Transform>();
     private List<Transform> llights = new List<Transform>();
+ 
     
     [Header("Speed")]
     [SerializeField]float speed;
@@ -25,7 +26,6 @@ public class PlayerController : MonoBehaviour
         {
             light_signal.GetComponent<Light>().enabled = false;
             rlights.Add(light_signal);
-            
         }
         foreach (Transform light_signal in LeftTurns.transform)
         {
@@ -91,9 +91,10 @@ public class PlayerController : MonoBehaviour
             }
 
         }
-        
+
+
         if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.LeftArrow)) {
-                
+            
             if(speed>3)
                 transform.Rotate(0, -0.5f, 0);
             else if(speed<-3)
