@@ -9,7 +9,6 @@ public class CarCollisionDetection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        car = transform.parent.gameObject;
     }
 
     // Update is called once per frame
@@ -20,9 +19,10 @@ public class CarCollisionDetection : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.CompareTag("Car"))
         {
-            car.GetComponent<CarMover>().setBrake(true);            
+            transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
         }
         
     }
@@ -31,7 +31,7 @@ public class CarCollisionDetection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car"))
         {
-            car.GetComponent<CarMover>().setBrake(false);    
+            transform.parent.gameObject.GetComponent<CarMover>().setBrake(false);    
         }
 
         
