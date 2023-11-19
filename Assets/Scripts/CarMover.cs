@@ -10,9 +10,10 @@ public class CarMover : MonoBehaviour
     private WaypointEdge nextWaypoint;
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float maxSpeed = 10f;
-    [SerializeField] private float acceleration = 0.3f;
-    [SerializeField] private float brakeForce = 0.6f;
+    [SerializeField] private float acceleration = 0.03f;
+    [SerializeField] private float brakeForce = 0.03f;
     [SerializeField] private float rotateSpeed = 4f;
+    private bool brake = false;
     private Quaternion rotationGoal;
     private Vector3 directionToWaypoint;
     // Start is called before the first frame update
@@ -36,7 +37,14 @@ public class CarMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Accelerate();   
+        if (brake == false)
+        {
+            Accelerate();
+        }
+        else
+        {
+            Brake();
+        }
         transform.position = Vector3.MoveTowards(transform.position, nextWaypoint.transform.position, moveSpeed * Time.deltaTime);
         
         if (Vector3.Distance(transform.position, nextWaypoint.transform.position) < 0.1f)
@@ -75,8 +83,13 @@ public class CarMover : MonoBehaviour
     {
         if (moveSpeed > 0f)
         {
-            moveSpeed -= brakeForce;
+            moveSpeed = Mathf.Clamp(moveSpeed - brakeForce, 0f, maxSpeed);
         }
+    }
+
+    public void setBrake(bool value)
+    {
+        brake = value;
     }
 
     public void setWaypoint(WaypointEdge waypoint)
