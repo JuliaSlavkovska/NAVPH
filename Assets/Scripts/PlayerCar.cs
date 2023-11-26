@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
-    [SerializeField] private GameObject steer;
+    
     
 
     bool RightTurn = false;
@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Speed")]
     [SerializeField]float speed;
     [SerializeField] float maxSpeed = 30.0f;
+    [SerializeField] float rotationAngle;
     
  
     
@@ -43,6 +44,7 @@ public class PlayerController : MonoBehaviour
 
         speed =0f;
         timer = 0.4f;
+        rotationAngle = 0.2f;
     }
 
     // Update is called once per frame
@@ -50,16 +52,22 @@ public class PlayerController : MonoBehaviour
     {
         //move
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
-  
+
+        CarMovement();
+        Blinks();
+    }
+
+    void CarMovement()
+    {
         //spomaluj na nulu
         if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
         {
             if (speed > 0)
             {
-                speed -= 0.1f;
+                speed -= 0.05f;
             }else
             {
-                speed += 0.1f;
+                speed += 0.05f;
             }
         }
         
@@ -90,10 +98,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) {
 
             if (speed > 3)
-                transform.Rotate(0, -0.5f, 0);
+                transform.Rotate(0, -rotationAngle, 0);
                 
             else if(speed<-3)
-                transform.Rotate(0, 0.5f, 0);
+                transform.Rotate(0, rotationAngle, 0);
             
         }
         
@@ -113,20 +121,22 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             if(speed<-3)
-                transform.Rotate(0, -0.5f, 0);
+                transform.Rotate(0, -rotationAngle, 0);
             else if(speed>3)
-                transform.Rotate(0, 0.5f, 0);
+                transform.Rotate(0, rotationAngle, 0);
             
         }
-        
-        
+    }
+
+    void Blinks()
+    {
         //Right signal
-        if (Input.GetKeyDown((KeyCode.Keypad6)))
+        if (Input.GetKeyDown((KeyCode.Mouse1)))
             SignalLightControl(ref RightTurn, rlights, ref LeftTurn, llights, RightBlink, LeftBlink);
 
 
         //Left signal
-        if (Input.GetKeyDown((KeyCode.Keypad4)))
+        if (Input.GetKeyDown((KeyCode.Mouse0)))
             SignalLightControl(ref LeftTurn, llights, ref RightTurn, rlights, LeftBlink, RightBlink);          
         
         //flashing when signal is turn on
@@ -135,9 +145,7 @@ public class PlayerController : MonoBehaviour
 
         if (LeftTurn)
             SignalLightFlashing(llights, LeftBlink);
-        
     }
-    
     void SignalLightControl(ref bool oneSignal, List<Transform> oneSignals, ref bool secondSignal, List<Transform> secondSignals, GameObject oneblink, GameObject secondblink) {
         timer = 0.4f;
         //signal on, turn off
@@ -174,8 +182,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-     
-
     void SignalLightFlashing(List<Transform> lights, GameObject blink)
     {
         if (timer > 0)
