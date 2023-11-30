@@ -20,16 +20,24 @@ public class CarCollisionDetection : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.gameObject.CompareTag("Car"))
+        if (other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
         {
             transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
         }
         
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
+        {
+            transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Car"))
+        if (other.gameObject.CompareTag("Car")|| other.gameObject.CompareTag("Yield"))
         {
             transform.parent.gameObject.GetComponent<CarMover>().setBrake(false);    
         }
