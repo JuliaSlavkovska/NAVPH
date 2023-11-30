@@ -7,7 +7,10 @@ using Random = UnityEngine.Random;
 public class WaypointEdge : MonoBehaviour
 {
     [SerializeField] private WaypointEdge[] directions;
+    [SerializeField] private bool isMainRoad;
+    private int hasCars;
     [ColorUsage(false, true)] public Color color = Color.blue;
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = color;
@@ -24,6 +27,53 @@ public class WaypointEdge : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Car"))
+        {
+            return;
+        }
+        Debug.Log(other.gameObject.name + " has entered the crossroad.");
+        hasCars++;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Car"))
+        {
+            return;
+        }
+        Debug.Log(other.gameObject.name + " is waiting on the crossroad.");
+        if (isMainRoad)
+        {
+            // If the waypoint is on a main road, or the car is not NPC, let it pass
+            return;
+        }
+        // Yield to cars on main roads, if any
+
+        if (transform.parent.GetComponent<Crossroad>().MainRoadsEmpty())
+        {
+            // Main road empty, deactivate the barrier
+            transform.GetChild(0).gameObject.SetActive(false);
+            other.gameObject.GetComponent<CarMover>().setBrake(false);
+        }
+        else
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Car"))
+        {
+            return;
+        }
+        Debug.Log(other.gameObject.name + " has left the crossroad.");
+        hasCars--;
+    }
+
     public WaypointEdge GetNext()
     {
         if (directions.Length > 0)
@@ -38,15 +88,13 @@ public class WaypointEdge : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public bool IsMainRoad()
     {
-        
+        return isMainRoad;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool HasCars()
     {
-        
+        return hasCars != 0;
     }
 }

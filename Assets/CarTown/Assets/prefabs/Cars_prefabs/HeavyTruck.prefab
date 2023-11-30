@@ -271,7 +271,7 @@ MonoBehaviour:
   moveSpeed: 0
   maxSpeed: 15
   acceleration: 0.03
-  brakeForce: 0.35
+  brakeForce: 0.25
   rotateSpeed: 4
 --- !u!54 &372006751377300081
 Rigidbody:
