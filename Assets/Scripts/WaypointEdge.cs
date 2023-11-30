@@ -33,7 +33,6 @@ public class WaypointEdge : MonoBehaviour
         {
             return;
         }
-        Debug.Log(other.gameObject.name + " has entered the crossroad.");
         hasCars++;
     }
 
@@ -43,7 +42,6 @@ public class WaypointEdge : MonoBehaviour
         {
             return;
         }
-        Debug.Log(other.gameObject.name + " is waiting on the crossroad.");
         if (isMainRoad)
         {
             // If the waypoint is on a main road, or the car is not NPC, let it pass
@@ -54,8 +52,12 @@ public class WaypointEdge : MonoBehaviour
         if (transform.parent.GetComponent<Crossroad>().MainRoadsEmpty())
         {
             // Main road empty, deactivate the barrier
-            transform.GetChild(0).gameObject.SetActive(false);
-            other.gameObject.GetComponent<CarMover>().setBrake(false);
+            var barrier = transform.GetChild(0).gameObject;
+            if (barrier.activeSelf)
+            {
+                barrier.SetActive(false);
+                other.gameObject.GetComponent<CarMover>().setBrake(false);
+            }
         }
         else
         {
@@ -70,7 +72,6 @@ public class WaypointEdge : MonoBehaviour
         {
             return;
         }
-        Debug.Log(other.gameObject.name + " has left the crossroad.");
         hasCars--;
     }
 
