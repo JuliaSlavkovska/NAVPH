@@ -29,7 +29,6 @@ public class TrafficLight : MonoBehaviour
     {
         if (startGreen)
         {
-            Debug.Log(timerMain);
             SetGreen();
         }
         else
