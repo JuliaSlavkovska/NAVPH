@@ -10,7 +10,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject allCrossrads;
     private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
-    [SerializeField] private GameObject emptyCar;
     [SerializeField] GameObject allCars;
 
     void Start()
@@ -25,13 +24,6 @@ public class GameController : MonoBehaviour
             SpawnCar();
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     void SpawnCar()
     {

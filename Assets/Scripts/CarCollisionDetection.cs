@@ -6,32 +6,23 @@ using UnityEngine;
 public class CarCollisionDetection : MonoBehaviour
 {
     private GameObject car;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    public bool detectCollision = true;
+    [SerializeField] private CarMover carMover;
+    
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
+        if (detectCollision && other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
         {
-            transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
+            carMover.setBrake(true);            
         }
         
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
+        if (detectCollision && other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
         {
-            transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
+            carMover.setBrake(true);            
         }
     }
 
@@ -39,7 +30,7 @@ public class CarCollisionDetection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car")|| other.gameObject.CompareTag("Yield"))
         {
-            transform.parent.gameObject.GetComponent<CarMover>().setBrake(false);    
+            carMover.setBrake(false);    
         }
 
         
