@@ -7,12 +7,12 @@ public class CarMover : MonoBehaviour
 {
     // Uklada referenciu na waypoint system ktory tento objekt pouziva
     private WaypointEdge currentWaypoint;
-    private WaypointEdge nextWaypoint;
     [SerializeField] private float moveSpeed = 0f;
     [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float acceleration = 0.03f;
     [SerializeField] private float brakeForce = 0.03f;
     [SerializeField] private float rotateSpeed = 4f;
+    [SerializeField] private CarCollisionDetection detector;
     private bool brake = false;
     private Quaternion rotationGoal;
     private Vector3 directionToWaypoint;
@@ -20,18 +20,10 @@ public class CarMover : MonoBehaviour
     void Start()
     {
         //nastavi dalsi waypoint ciel
-        //nextWaypoint = currentWaypoint.GetNext();
-        //transform.position = nextWaypoint.transform.position;
-        nextWaypoint = currentWaypoint.GetNext();
-        if (nextWaypoint == null)
-        {
-            nextWaypoint = currentWaypoint;
-        }
-        else
-        {
-            currentWaypoint = nextWaypoint;
-        }
-        transform.LookAt(nextWaypoint.transform);
+        //currentWaypoint = currentWaypoint.GetNext();
+        //transform.position = currentWaypoint.transform.position;
+        currentWaypoint = currentWaypoint.GetNext();
+        transform.LookAt(currentWaypoint.transform);
     }
 
     // Update is called once per frame
@@ -45,19 +37,14 @@ public class CarMover : MonoBehaviour
         {
             Brake();
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextWaypoint.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.transform.position, moveSpeed * Time.deltaTime);
         
-        if (Vector3.Distance(transform.position, nextWaypoint.transform.position) < 0.1f)
+        if (Vector3.Distance(transform.position, currentWaypoint.transform.position) < 0.1f)
         {
-            nextWaypoint = currentWaypoint.GetNext();
-            if (nextWaypoint == null) {
-                nextWaypoint = currentWaypoint;
-            }
-            else {
-                currentWaypoint = nextWaypoint;
-            }
-
-            
+            // Reached the current target
+            // Waypoint is an entry to the crossroad - pass without stopping for anything
+            detector.detectCollision = !currentWaypoint.isEntrance;
+            currentWaypoint = currentWaypoint.GetNext();
         }
         RotateTowardsWaypoint();
 

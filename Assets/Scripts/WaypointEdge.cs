@@ -8,8 +8,8 @@ public class WaypointEdge : MonoBehaviour
 {
     [SerializeField] private WaypointEdge[] directions;
     [SerializeField] private bool isMainRoad;
-    [SerializeField] private GameObject barrier;
-    private int hasCars;
+    [SerializeField] private SignsCrossroad crossroad;
+    [SerializeField] public bool isEntrance;
     [ColorUsage(false, true)] public Color color = Color.blue;
     
     private void OnDrawGizmos()
@@ -30,46 +30,20 @@ public class WaypointEdge : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.gameObject.CompareTag("Car"))
+        if (isMainRoad && other.gameObject.CompareTag("Car"))
         {
-            return;
-        }
-        hasCars++;
-    }
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (!other.gameObject.CompareTag("Car"))
-        {
-            return;
-        }
-        if (isMainRoad)
-        {
-            // If the waypoint is on a main road, or the car is not NPC, let it pass
-            return;
-        }
-        // Yield to cars on main roads, if any
-
-        if (transform.parent.GetComponent<Crossroad>().MainRoadsEmpty())
-        {
-            // Main road empty, deactivate the barrier
-            barrier.transform.localPosition = new Vector3(0, 100, 0);
-        }
-        else
-        {
-            // Activate the barrier
-            barrier.transform.localPosition = new Vector3(0, 0, 0);
+            crossroad.carsOnMain++;
         }
 
     }
-
+    
     private void OnTriggerExit(Collider other)
     {
-        if (!other.gameObject.CompareTag("Car"))
+        if (isMainRoad && other.gameObject.CompareTag("Car"))
         {
-            return;
+            crossroad.carsOnMain--;
         }
-        hasCars--;
+
     }
 
     public WaypointEdge GetNext()
@@ -80,19 +54,8 @@ public class WaypointEdge : MonoBehaviour
             
             return directions[randomNumber];
         }
-        else
-        {
-            return null;
-        }
+
+        return null;
     }
 
-    public bool IsMainRoad()
-    {
-        return isMainRoad;
-    }
-
-    public bool HasCars()
-    {
-        return hasCars != 0;
-    }
 }

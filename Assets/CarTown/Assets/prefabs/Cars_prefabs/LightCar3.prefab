@@ -189,6 +189,7 @@ MonoBehaviour:
   acceleration: 0.03
   brakeForce: 0.25
   rotateSpeed: 4
+  detector: {fileID: 1482348273426585031}
 --- !u!54 &-5021654368686987718
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -387,3 +388,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7418f835cbf885244bcb457c4bfdd7c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectCollision: 1
+  carMover: {fileID: 7077375034873967413}

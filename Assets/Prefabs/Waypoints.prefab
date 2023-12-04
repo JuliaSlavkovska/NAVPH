@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.9716981, g: 0.18981783, b: 0.1512549, a: 1}
 --- !u!1 &1170656071798437515
 GameObject:
@@ -94,6 +96,8 @@ MonoBehaviour:
   - {fileID: 646839415953244275}
   - {fileID: 2179042882206391639}
   - {fileID: 6743432631861886680}
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
 --- !u!1 &1677377883895216464
 GameObject:
@@ -140,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.9716981, g: 0.18981783, b: 0.1512549, a: 1}
 --- !u!1 &3274166450483319767
 GameObject:
@@ -150,7 +156,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6334006147482037713}
-  - component: {fileID: 1547777707906508556}
   m_Layer: 0
   m_Name: Waypoints
   m_TagString: Untagged
@@ -181,27 +186,6 @@ Transform:
   - {fileID: 8704958662860407592}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1547777707906508556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3274166450483319767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28483d0ad7fcc3d4ca66506275870b13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waipointsEdges:
-  - {fileID: 646839415953244275}
-  - {fileID: 1139481839667278350}
-  - {fileID: 2179042882206391639}
-  - {fileID: 3578274088641027017}
-  - {fileID: 6743432631861886680}
-  - {fileID: 1035411809918643616}
-  - {fileID: 7689547557142650591}
-  - {fileID: 6560870098342648014}
 --- !u!1 &4839605486349548240
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.9716981, g: 0.18981783, b: 0.1512549, a: 1}
 --- !u!1 &6024963862844200234
 GameObject:
@@ -296,6 +282,8 @@ MonoBehaviour:
   - {fileID: 646839415953244275}
   - {fileID: 2179042882206391639}
   - {fileID: 7689547557142650591}
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
 --- !u!1 &6070689278532405063
 GameObject:
@@ -345,6 +333,8 @@ MonoBehaviour:
   - {fileID: 7689547557142650591}
   - {fileID: 6743432631861886680}
   - {fileID: 2179042882206391639}
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
 --- !u!1 &7062568657154321779
 GameObject:
@@ -394,6 +384,8 @@ MonoBehaviour:
   - {fileID: 646839415953244275}
   - {fileID: 6743432631861886680}
   - {fileID: 7689547557142650591}
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
 --- !u!1 &8127208200875907664
 GameObject:
@@ -440,4 +432,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  isMainRoad: 0
+  crossroad: {fileID: 0}
   color: {r: 0.9716981, g: 0.18981783, b: 0.1512549, a: 1}
