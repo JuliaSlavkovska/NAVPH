@@ -13,6 +13,11 @@ public class SignsCrossroad : Crossroad
 
     public void Update()
     {
+        carsOnMain = 0;
+        foreach (var waypoint in waypoints)
+        {
+            carsOnMain += waypoint.numOfCars;
+        }
         if (!blocking && carsOnMain > 0)
         {
             // block 

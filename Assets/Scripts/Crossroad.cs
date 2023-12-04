@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class Crossroad : MonoBehaviour
 {
-    [SerializeField] protected List<WaypointEdge> waypointsEdges = new List<WaypointEdge>();
+    [SerializeField] protected List<WaypointEdge> waypoints = new List<WaypointEdge>();
 
     public Transform GetNextWaypoint(WaypointEdge currentWaypoint)
     {      
@@ -15,12 +16,12 @@ public class Crossroad : MonoBehaviour
 
     public WaypointEdge getFirstEdge()
     {
-        return waypointsEdges[7];
+        return waypoints[7];
     }
 
     public WaypointEdge getRandomEdge()
     {
-        return waypointsEdges[Random.Range(0, waypointsEdges.Count)];
+        return waypoints[Random.Range(0, waypoints.Count)];
     }
     
 }
