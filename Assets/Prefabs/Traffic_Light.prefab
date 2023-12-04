@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4711746734937401790
 Transform:
   m_ObjectHideFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1858706156085326959
 Transform:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 7592078989707674690}
   - component: {fileID: 3160585410423326596}
   - component: {fileID: 7249275157209352221}
-  - component: {fileID: 3325955042320463003}
+  - component: {fileID: 9181837724134513120}
   m_Layer: 0
   m_Name: Traffic_Light
   m_TagString: Untagged
@@ -237,7 +237,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5149475051416771820}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.32, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -297,7 +297,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3325955042320463003
+--- !u!114 &9181837724134513120
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,6 +312,10 @@ MonoBehaviour:
   red: {fileID: 8362679933860912235}
   yellow: {fileID: 275188656365284766}
   green: {fileID: 3744070012983042880}
+  timer: 0
+  timerMain: 10
+  timerYellow: 2
+  startGreen: 1
 --- !u!1 &8362679933860912235
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,7 +334,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4865488857845112401
 Transform:
   m_ObjectHideFlags: 0

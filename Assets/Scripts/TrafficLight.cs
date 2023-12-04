@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public enum LightColor
 {
@@ -18,14 +19,17 @@ public class TrafficLight : MonoBehaviour
     [SerializeField] private GameObject yellow;
     [SerializeField] private GameObject green;
     [SerializeField] private float timer;
-    [SerializeField] private float timerMax;
+    [SerializeField] private float timerMain;
+    [SerializeField] private float timerYellow;
     [SerializeField] private bool startGreen;
+    [SerializeField] private GameObject barrier;
     private LightColor currentColor;
     
     public void Start()
     {
         if (startGreen)
         {
+            Debug.Log(timerMain);
             SetGreen();
         }
         else
@@ -36,29 +40,24 @@ public class TrafficLight : MonoBehaviour
 
     public void Update()
     {
-        timer += Time.deltaTime;
-        if (timer < timerMax) 
+        timer -= Time.deltaTime;
+        if (timer >= 0f) 
             return;
-        timer = 0f;
         switch (currentColor)
         {
             case LightColor.Red:
                 SetYellow();
                 currentColor = LightColor.YellowToGreen;
-                timerMax = 2f;
                 break;
             case LightColor.Green:
                 SetYellow();
                 currentColor = LightColor.YellowToRed;
-                timerMax = 2f;
                 break;
             case LightColor.YellowToGreen:
                 SetGreen();
-                timerMax = 10f;
                 break;
             case LightColor.YellowToRed:
-                SetGreen();
-                timerMax = 10f;
+                SetRed();
                 break;
         }
 
@@ -66,6 +65,8 @@ public class TrafficLight : MonoBehaviour
 
     private void SetRed()
     {
+        barrier.transform.localPosition = new Vector3(0, 0, 0);
+        timer = timerMain;
         currentColor = LightColor.Red;
         yellow.SetActive(false);
         green.SetActive(false);
@@ -74,6 +75,7 @@ public class TrafficLight : MonoBehaviour
     
     private void SetYellow()
     {
+        timer = timerYellow;
         green.SetActive(false);
         red.SetActive(false);
         yellow.SetActive(true);
@@ -82,6 +84,8 @@ public class TrafficLight : MonoBehaviour
     
     private void SetGreen()
     {
+        barrier.transform.localPosition = new Vector3(0, 100 ,0);
+        timer = timerMain;
         currentColor = LightColor.Green;
         yellow.SetActive(false);
         red.SetActive(false);

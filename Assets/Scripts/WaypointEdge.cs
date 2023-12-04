@@ -8,6 +8,7 @@ public class WaypointEdge : MonoBehaviour
 {
     [SerializeField] private WaypointEdge[] directions;
     [SerializeField] private bool isMainRoad;
+    [SerializeField] private GameObject barrier;
     private int hasCars;
     [ColorUsage(false, true)] public Color color = Color.blue;
     
@@ -52,16 +53,12 @@ public class WaypointEdge : MonoBehaviour
         if (transform.parent.GetComponent<Crossroad>().MainRoadsEmpty())
         {
             // Main road empty, deactivate the barrier
-            var barrier = transform.GetChild(0).gameObject;
-            if (barrier.activeSelf)
-            {
-                barrier.SetActive(false);
-                other.gameObject.GetComponent<CarMover>().setBrake(false);
-            }
+            barrier.transform.localPosition = new Vector3(0, 100, 0);
         }
         else
         {
-            transform.GetChild(0).gameObject.SetActive(true);
+            // Activate the barrier
+            barrier.transform.localPosition = new Vector3(0, 0, 0);
         }
 
     }
