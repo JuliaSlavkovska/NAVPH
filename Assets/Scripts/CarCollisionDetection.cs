@@ -31,7 +31,6 @@ public class CarCollisionDetection : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
         {
-            Debug.Log(transform.parent.gameObject.name + " detecting a " + other.gameObject.name + ", stopping!");
             transform.parent.gameObject.GetComponent<CarMover>().setBrake(true);            
         }
     }
