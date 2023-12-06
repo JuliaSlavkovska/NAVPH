@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
+    [SerializeField] private Rigidbody rigidbody;
     
     
 
@@ -55,6 +56,11 @@ public class PlayerController : MonoBehaviour
 
         CarMovement();
         Blinks();
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        speed = 0;
     }
 
     void CarMovement()
