@@ -31,7 +31,6 @@ public class AllPickUps : MonoBehaviour
 
     public PickUpField GetActuallPickUpField()
     {
-        Debug.Log(PickUps[pickup_index].name);
         return PickUps[pickup_index]; 
     }
 }

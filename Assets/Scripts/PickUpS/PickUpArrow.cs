@@ -8,8 +8,7 @@ public class PickUpArrow : MonoBehaviour
 {
     // Start is called before the first frame update
     private float movementValue;
-    float elapsed = 0f;
-    float value = 8f;
+    float value = 3f;
     float speed = 1f;
     private Vector3 target;
     private Vector3 start;
@@ -30,6 +29,8 @@ public class PickUpArrow : MonoBehaviour
     {
         lerp = Mathf.PingPong(Time.time, speed) / speed;
         transform.position = Vector3.Lerp(start, target, lerp);
+        transform.localRotation =
+            Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + 0.2f, transform.eulerAngles.z);
     }
 
 
