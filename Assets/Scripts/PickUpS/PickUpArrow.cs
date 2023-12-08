@@ -12,6 +12,9 @@ public class PickUpArrow : MonoBehaviour
     float value = 8f;
     float speed = 1f;
     private Vector3 target;
+    private Vector3 start;
+    private float lerp;
+
     
 
     // Update is called once per frame
@@ -19,20 +22,14 @@ public class PickUpArrow : MonoBehaviour
     private void Start()
     {
         target = new Vector3(transform.position.x, transform.position.y + value, transform.position.z);
+        start = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        
     }
 
     void Update()
     {
-        
-        elapsed += Time.deltaTime;
-        transform.position = Vector3.Lerp(transform.position, target, Time.deltaTime*speed);
-        
-        if (elapsed >= 1f) {
-            value*=-1f;
-            elapsed %=1f;
-            target = new Vector3(transform.position.x, transform.position.y + value, transform.position.z);
-        }
-
+        lerp = Mathf.PingPong(Time.time, speed) / speed;
+        transform.position = Vector3.Lerp(start, target, lerp);
     }
 
 
