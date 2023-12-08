@@ -9,17 +9,16 @@ public class ScoreController : MonoBehaviour
 
     public int Score { get; private set; }
     public UnityEvent OnScoreChanged;
-    
+    public UnityEvent OnPickUpReached;
 
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("PickUp"))
         {
-            Debug.Log("Trigger with PickupPoint");
             Score++;
-            Debug.Log(Score);
             OnScoreChanged.Invoke();
+            OnPickUpReached.Invoke();
         }
     }
 

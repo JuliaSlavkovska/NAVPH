@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="0cca82af-d0af-47e6-b2f1-eb7b3ee80e3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GreenMaterial.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GreenMaterial.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PickUpSpot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PickUpSpot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpArrow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PickUpCollor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PickUpCollor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetArrow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TargetArrow.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +22,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/Desktop/Scripty/PlayerController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/AllPickUps.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpArrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpField.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PlayerCar.cs" root0="FORCE_HIGHLIGHTING" />
