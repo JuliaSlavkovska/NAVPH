@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private CameraFollow camera;
     
     
 
@@ -26,7 +28,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSpeed = 30.0f;
     [SerializeField] float rotationAngle;
     
- 
     
     void Start()
     {
@@ -60,7 +61,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        speed = 0;
+        
+        if (other.gameObject.CompareTag("Cube"))
+        {
+            speed = 0;
+            camera.FreezeCam();
+            Debug.Log("Colision");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
     }
 
     void CarMovement()

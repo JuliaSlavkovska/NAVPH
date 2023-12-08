@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Car
   - Yield
+  - Cube
+  - PickUp
   layers:
   - Default
   - TransparentFX
