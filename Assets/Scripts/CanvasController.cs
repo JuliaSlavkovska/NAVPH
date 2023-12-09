@@ -6,21 +6,22 @@ using TMPro;
 using UnityEngine.UI;
 
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
-public class ScoreUI : MonoBehaviour
+public class CanvasController : MonoBehaviour
 {
 
-    [SerializeField] private TMP_Text _scoreValue;
-    [SerializeField] private TMP_Text _Delivery;
-    [SerializeField] private TMP_Text _Rules;
+    [SerializeField] private TMP_Text _DeliveryPlayer;
     [SerializeField] private Slider _slider;
+    [SerializeField] private TMP_Text _DeliveryResults;
+    [SerializeField] private TMP_Text _RulesResults;
     [SerializeField] private GameObject PlayerViewPanel;
     [SerializeField] private GameObject RestartGamePanel;
  
     
-    public void UpdateScore(ScoreController scoreController)
+    public void UpdateDelivery(ScoreController scoreController)
     {
-        _scoreValue.text = scoreController.Score.ToString();
+        _DeliveryPlayer.text = scoreController.Delivery.ToString();
     }
     
     public void UpdateHealthBar(ScoreController scoreController)
@@ -33,8 +34,8 @@ public class ScoreUI : MonoBehaviour
         int broken_rules = (int)((1 - scoreController.Health) / scoreController.damage);
         PlayerViewPanel.SetActive(false);
         RestartGamePanel.SetActive(true);
-        _Delivery.text = "Sucessful delivery: " + scoreController.Score;
-        _Rules.text = "Broken ruels: " + broken_rules;
+        _DeliveryResults.text = "Sucessful delivery: " + scoreController.Delivery;
+        _RulesResults.text = "Broken rules: " + broken_rules;
 
     }
     

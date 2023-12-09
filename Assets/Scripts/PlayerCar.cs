@@ -9,18 +9,20 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     
+    
     [Header("Lights")]
     [SerializeField] private GameObject RightTurns;
     [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
-    [SerializeField] private CameraFollow camera;
+    [SerializeField] private GameObject objekt;
+    
     
     
 
     bool RightTurn = false;
     bool LeftTurn = false;
-    private bool Freeze = false;
+    //private bool Freeze = false;
     private float timer;
     private List<Transform> rlights = new List<Transform>();
     private List<Transform> llights = new List<Transform>();
@@ -30,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSpeed = 30.0f;
     [SerializeField] float rotationAngle;
     
-    public UnityEvent OnCrash;
+
     
     void Start()
     {
@@ -55,7 +57,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Freeze)
+        if (!objekt.GetComponent<ScoreController>().Freeze)
         {
             //move
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -63,21 +65,7 @@ public class PlayerController : MonoBehaviour
             Blinks();
         }
     }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        
-        if (other.gameObject.CompareTag("Cube"))
-        {
-            Freeze = true;
-            camera.FreezeCam();
-            Debug.Log("Colision");
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            OnCrash.Invoke();
-        }
-
-    }
-
+    
     void CarMovement()
     {
         //spomaluj na nulu

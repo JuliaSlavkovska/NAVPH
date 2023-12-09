@@ -1941,7 +1941,7 @@ GameObject:
   - component: {fileID: 770370620}
   - component: {fileID: 770370619}
   m_Layer: 5
-  m_Name: ScoreValue
+  m_Name: DeliveryValue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3902,10 +3902,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76633cd69be0433408cc1f1bb0c508a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreValue: {fileID: 770370619}
-  _Delivery: {fileID: 781720721}
-  _Rules: {fileID: 1594340101}
+  _DeliveryPlayer: {fileID: 770370619}
   _slider: {fileID: 45839261}
+  _DeliveryResults: {fileID: 781720721}
+  _RulesResults: {fileID: 1594340101}
   PlayerViewPanel: {fileID: 1342307350}
   RestartGamePanel: {fileID: 948812590}
 --- !u!1 &1448466901
@@ -4718,25 +4718,10 @@ MonoBehaviour:
   LeftTurns: {fileID: 493501976}
   LeftBlink: {fileID: 407371876}
   RightBlink: {fileID: 320732080}
-  camera: {fileID: 336778719}
+  objekt: {fileID: 1779060865}
   speed: 0
   maxSpeed: 30
   rotationAngle: 0
-  OnCrash:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1370713081}
-        m_TargetAssemblyTypeName: ScoreUI, Assembly-CSharp
-        m_MethodName: GameOver
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1779060869}
-          m_ObjectArgumentAssemblyTypeName: ScoreController, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &1779060867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4262860458111470, guid: de53374949c380a43831cdf100ac633d, type: 3}
@@ -4786,7 +4771,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1370713081}
         m_TargetAssemblyTypeName: ScoreUI, Assembly-CSharp
-        m_MethodName: UpdateScore
+        m_MethodName: UpdateDelivery
         m_Mode: 2
         m_Arguments:
           m_ObjectArgument: {fileID: 1779060869}
@@ -4835,6 +4820,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnCrash:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1370713081}
+        m_TargetAssemblyTypeName: CanvasController, Assembly-CSharp
+        m_MethodName: GameOver
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1779060869}
+          m_ObjectArgumentAssemblyTypeName: ScoreController, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  camera: {fileID: 336778719}
 --- !u!1 &1780739469
 GameObject:
   m_ObjectHideFlags: 0
