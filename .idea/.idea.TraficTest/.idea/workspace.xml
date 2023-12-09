@@ -6,11 +6,39 @@
   <component name="ChangeListManager">
     <list default="true" id="0cca82af-d0af-47e6-b2f1-eb7b3ee80e3c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x2_smallRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x2_smallRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x4_smallRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x4_smallRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallCross.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallCross.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallT.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallT.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallTurn.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x6_smallTurn.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x8_smallRoadTerminal.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x8_smallRoadTerminal.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x8_smallRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_6x8_smallRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_2_bigRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_2_bigRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_3_bigRoadCrossWalk.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_3_bigRoadCrossWalk.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_3_bigRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8_3_bigRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigCross.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigCross.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigRoadTerminal.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigRoadTerminal.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigRoad_2sidewalks.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigRoad_2sidewalks.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigT.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigT.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigTurn.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Terrain_prefabs/Terrain_road_8x8_bigTurn.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Player.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreUI.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +75,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "UserUI",
+    "git-widget-placeholder": "TownBuild",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
