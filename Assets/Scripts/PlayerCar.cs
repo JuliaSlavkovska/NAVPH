@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
 
     bool RightTurn = false;
     bool LeftTurn = false;
+    private bool Freeze = false;
     private float timer;
     private List<Transform> rlights = new List<Transform>();
     private List<Transform> llights = new List<Transform>();
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float maxSpeed = 30.0f;
     [SerializeField] float rotationAngle;
     
+    public UnityEvent OnCrash;
     
     void Start()
     {
@@ -52,11 +55,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //move
-        transform.Translate(Vector3.forward * Time.deltaTime * speed);
-
-        CarMovement();
-        Blinks();
+        if (!Freeze)
+        {
+            //move
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            CarMovement();
+            Blinks();
+        }
     }
 
     private void OnCollisionEnter(Collision other)
@@ -64,10 +69,11 @@ public class PlayerController : MonoBehaviour
         
         if (other.gameObject.CompareTag("Cube"))
         {
-            speed = 0;
+            Freeze = true;
             camera.FreezeCam();
             Debug.Log("Colision");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            OnCrash.Invoke();
         }
 
     }
