@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 657357938825062021}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.72, y: 0, z: -2.57}
+  m_LocalPosition: {x: 5.2, y: 0, z: -2.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1486b686a5a56db4a90e0481d54bb6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directions:
-  - {fileID: 0}
+  directions: []
   isMainRoad: 0
   isEntrance: 0
   leftTurn: {fileID: 0}
@@ -80,7 +79,7 @@ Transform:
   m_GameObject: {fileID: 970101584146909630}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.37, y: 0, z: 7.13}
+  m_LocalPosition: {x: 1.42, y: 0, z: 5.4200025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -98,8 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1486b686a5a56db4a90e0481d54bb6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directions:
-  - {fileID: 0}
+  directions: []
   isMainRoad: 0
   isEntrance: 0
   leftTurn: {fileID: 0}
@@ -134,7 +132,7 @@ Transform:
   m_GameObject: {fileID: 1921435898651242037}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.35, y: 0, z: -7.49}
+  m_LocalPosition: {x: 1.39, y: 0, z: -6.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -161,7 +159,7 @@ MonoBehaviour:
   isMainRoad: 0
   isEntrance: 1
   leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
+  opposite: {fileID: 3266827749210124299}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -244,11 +242,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125317724157427654}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.6, y: 0, z: -38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7403876914135729188}
   - {fileID: 836777702080407352}
   - {fileID: 6144191623009126633}
   - {fileID: 4043454527865350974}
@@ -256,7 +255,6 @@ Transform:
   - {fileID: 6274682879184381298}
   - {fileID: 1479450828076020335}
   - {fileID: 674414562204753400}
-  - {fileID: 7403876914135729188}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5629534173346645260
@@ -306,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 5101739857787393186}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.25, y: 0, z: 7.1}
+  m_LocalPosition: {x: -2.287, y: 0, z: 5.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -333,7 +331,7 @@ MonoBehaviour:
   isMainRoad: 0
   isEntrance: 1
   leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
+  opposite: {fileID: 4276794561066910566}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -364,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 5171445492088178706}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.82, y: 0, z: 2.31}
+  m_LocalPosition: {x: -6.330001, y: 0, z: 1.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -382,8 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1486b686a5a56db4a90e0481d54bb6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directions:
-  - {fileID: 0}
+  directions: []
   isMainRoad: 0
   isEntrance: 0
   leftTurn: {fileID: 0}
@@ -418,7 +415,7 @@ Transform:
   m_GameObject: {fileID: 6201499796634474453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.74, y: 0, z: -7.56}
+  m_LocalPosition: {x: -2.02, y: 0, z: -6.449996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -436,8 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1486b686a5a56db4a90e0481d54bb6d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  directions:
-  - {fileID: 0}
+  directions: []
   isMainRoad: 0
   isEntrance: 0
   leftTurn: {fileID: 0}
@@ -631,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 8598823530608443396}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.68, y: 0, z: -2.4}
+  m_LocalPosition: {x: -6.19, y: 0, z: -2.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -658,10 +654,10 @@ MonoBehaviour:
   isMainRoad: 0
   isEntrance: 1
   leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
+  opposite: {fileID: 5144935001268613093}
   leftYield: {fileID: 0}
   numOfCars: 0
-  blocker: {fileID: 0}
+  blocker: {fileID: 6659303893572660238}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
 --- !u!1 &9040570684966079690
 GameObject:
@@ -689,7 +685,7 @@ Transform:
   m_GameObject: {fileID: 9040570684966079690}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.9, y: 0, z: 2.4}
+  m_LocalPosition: {x: 5.38, y: 0, z: 1.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -716,7 +712,7 @@ MonoBehaviour:
   isMainRoad: 0
   isEntrance: 1
   leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
+  opposite: {fileID: 1129123764017474053}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -739,7 +735,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149475051416771820, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_Name
-      value: TB_CITY_Prop_TrafficLight_VSet_Black
+      value: Traffic Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -780,6 +788,10 @@ PrefabInstance:
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362679933860912235, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_IsActive
@@ -825,7 +837,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149475051416771820, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_Name
-      value: TB_CITY_Prop_TrafficLight_VSet_Black
+      value: Traffic Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -866,6 +890,10 @@ PrefabInstance:
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362679933860912235, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_IsActive
@@ -911,7 +939,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149475051416771820, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_Name
-      value: TB_CITY_Prop_TrafficLight_VSet_Black
+      value: Traffic Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -952,6 +992,10 @@ PrefabInstance:
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362679933860912235, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_IsActive
@@ -997,7 +1041,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5149475051416771820, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_Name
-      value: TB_CITY_Prop_TrafficLight_VSet_Black
+      value: Traffic Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1038,6 +1094,10 @@ PrefabInstance:
     - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7592078989707674690, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8362679933860912235, guid: d4025d42167b91a41a4488b089ffefb2, type: 3}
       propertyPath: m_IsActive

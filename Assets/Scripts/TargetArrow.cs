@@ -19,7 +19,8 @@ public class TargetArrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(target.transform.position-transform.position),rotationSpeed*Time.deltaTime);
+        if(target)
+            transform.rotation = Quaternion.Slerp(transform.rotation,Quaternion.LookRotation(target.transform.position-transform.position),rotationSpeed*Time.deltaTime);
         //Vector3 tempRot= transform.localEulerAngles;
         //tempRot.x=0;
         //transform.localEulerAngles=tempRot;

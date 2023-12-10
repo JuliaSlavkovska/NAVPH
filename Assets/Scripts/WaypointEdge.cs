@@ -27,7 +27,7 @@ public class WaypointEdge : MonoBehaviour
 
         Gizmos.color = Color.green;
 
-        if (directions != null)
+        if (directions.Length != 0)
         {
             for (int i = 0; i <= directions.Length - 1; i++)
             {

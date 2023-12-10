@@ -7,19 +7,15 @@ using Random = UnityEngine.Random;
 public class GameController : MonoBehaviour
 {
     // Start is called before the first frame update
-    [SerializeField] private GameObject allCrossrads;
-    private List<GameObject> crossroads = new List<GameObject>();
+    [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
     [SerializeField] GameObject allCars;
 
     void Start()
     {
-        foreach(Transform child in allCrossrads.transform)
-        {
-            crossroads.Add(child.gameObject);
-        }
 
-        for(var i = 0; i < 10; ++i)
+
+        for(var i = 0; i < 100; ++i)
         {
             SpawnCar();
         }
@@ -28,7 +24,10 @@ public class GameController : MonoBehaviour
     void SpawnCar()
     {
         // Get random waypoint from a random crossroad
-        var waypoint = crossroads[Random.Range(0, crossroads.Count)].GetComponent<Crossroad>().getRandomEdge();
+        var idx = Random.Range(0, crossroads.Count);
+        var waypoint = crossroads[idx].GetComponent<Crossroad>().getRandomEdge();
+        if (!waypoint)
+            Debug.Log(idx);
 
 
         GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Count)]);

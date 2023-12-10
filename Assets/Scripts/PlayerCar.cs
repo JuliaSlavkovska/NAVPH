@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
         speed =0f;
         timer = 0.4f;
-        rotationAngle = 0.2f;
+        rotationAngle = 0.4f;
     }
 
     // Update is called once per frame
