@@ -14,11 +14,6 @@ public class Crossroad : MonoBehaviour
         return currentWaypoint.GetNext().transform;
     }
 
-    public WaypointEdge getFirstEdge()
-    {
-        return waypoints[7];
-    }
-
     public WaypointEdge getRandomEdge()
     {
         return waypoints[Random.Range(0, waypoints.Count)];

@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class CarCollisionDetection : MonoBehaviour
 {
-    private GameObject car;
     public bool detectCollision = true;
     [SerializeField] private CarMover carMover;
     
     private void OnTriggerEnter(Collider other)
     {
-        if (detectCollision && other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
+        if (detectCollision && other.gameObject.CompareTag("Car") || 
+            other.gameObject.CompareTag("Yield") ||
+            other.gameObject.CompareTag("Player")) 
         {
+            Debug.Log(carMover.name + " colliding with " + other.name);
             carMover.setBrake(true);            
         }
         
@@ -20,16 +22,22 @@ public class CarCollisionDetection : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (detectCollision && other.gameObject.CompareTag("Car") || other.gameObject.CompareTag("Yield"))
+        if (detectCollision && other.gameObject.CompareTag("Car") || 
+            other.gameObject.CompareTag("Yield") ||
+            other.gameObject.CompareTag("Player"))
         {
+            Debug.Log(carMover.name + " colliding with " + other.name);
             carMover.setBrake(true);            
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Car")|| other.gameObject.CompareTag("Yield"))
+        if (other.gameObject.CompareTag("Car") || 
+            other.gameObject.CompareTag("Yield") ||
+            other.gameObject.CompareTag("Player")) 
         {
+            Debug.Log(carMover.name + " ended collision with " + other.name);
             carMover.setBrake(false);    
         }
 

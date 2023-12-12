@@ -109,16 +109,48 @@ PrefabInstance:
       value: T - Lights Crossroad Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
-      propertyPath: directions.Array.size
-      value: 2
+      propertyPath: rightWaypoint
+      value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[0]
+      value: 
+      objectReference: {fileID: 7352817833740557209}
     - target: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: directions.Array.data[1]
       value: 
-      objectReference: {fileID: 7352817833740557209}
+      objectReference: {fileID: 2327763614172991872}
+    - target: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: leftWaypoint
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: directions.Array.size
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[1]
+      value: 
+      objectReference: {fileID: 5580926327948425099}
+    - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[2]
+      value: 
+      objectReference: {fileID: 7352817833740557209}
+    - target: {fileID: 4276794561066910566, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[3]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4989575437850539224, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: m_LocalScale.x
@@ -141,33 +173,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5144935001268613093, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: straightWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144935001268613093, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: directions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5144935001268613093, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: directions.Array.data[1]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5144935001268613093, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: directions.Array.data[2]
+      value: 
       objectReference: {fileID: 5580926327948425099}
     - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: waypoints.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
-      propertyPath: waypoints.Array.data[1]
+      propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 2458161269603132812}
     - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 5580926327948425099}
-    - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
-      propertyPath: waypoints.Array.data[3]
+      propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 5200889281337981538}
     - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 3751788620963960545}
+    - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+      propertyPath: waypoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 3751788620963960545}
+    - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: waypoints.Array.data[4]
       value: 
-      objectReference: {fileID: 7352817833740557209}
+      objectReference: {fileID: 3751788620963960545}
     - target: {fileID: 5629534173346645260, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
       propertyPath: waypoints.Array.data[5]
       value: 
@@ -187,6 +231,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+--- !u!114 &2327763614172991872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3388640469406958599, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
+  m_PrefabInstance: {fileID: 1102042845635646855}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1486b686a5a56db4a90e0481d54bb6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2458161269603132812 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3266827749210124299, guid: 95bec61e95cbd2b41b25097002f98708, type: 3}
