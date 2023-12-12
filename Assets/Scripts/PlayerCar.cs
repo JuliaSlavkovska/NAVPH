@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rotationAngle;
     
 
+    private AudioManager _audioManager;
     
     void Start()
     {
@@ -52,6 +53,8 @@ public class PlayerController : MonoBehaviour
         speed =0f;
         timer = 0.4f;
         rotationAngle = 0.4f;
+        _audioManager = FindObjectOfType<AudioManager>();
+        _audioManager.Play("CarIdle");
     }
 
     // Update is called once per frame
@@ -90,6 +93,19 @@ public class PlayerController : MonoBehaviour
             {
                 speed += 0.2f;
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            //_audioManager.Play("CarMovement");
+            _audioManager.FadeIn("CarMovement", 2, 1f);
+            _audioManager.FadeOut("CarIdle", 2, 0);
+        }
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            //_audioManager.Stop("CarMovement");
+            _audioManager.FadeOut("CarMovement", 0.5f, 0);
+            _audioManager.FadeIn("CarIdle", 0.5f, 0.6f);
         }
 
         //WASD
@@ -156,7 +172,7 @@ public class PlayerController : MonoBehaviour
             SignalLightFlashing(llights, LeftBlink);
     }
     void SignalLightControl(ref bool oneSignal, List<Transform> oneSignals, ref bool secondSignal, List<Transform> secondSignals, GameObject oneblink, GameObject secondblink) {
-        timer = 0.4f;
+        //timer = 0.4f;
         //signal on, turn off
         if (oneSignal)
         {
@@ -165,7 +181,9 @@ public class PlayerController : MonoBehaviour
                 signal.GetComponent<Light>().enabled = false;
             }
             oneblink.SetActive(false);
+            _audioManager.Stop("Indicator");
             oneSignal = false;
+            
         }
 
         //signal off, turn on && check if already not active the otherone signal if so, shut down
@@ -178,6 +196,7 @@ public class PlayerController : MonoBehaviour
                     signal.GetComponent<Light>().enabled = false;
                 }
                 secondblink.SetActive(false);
+                _audioManager.Stop("Indicator");
                 secondSignal = false;
             }
 
@@ -186,6 +205,7 @@ public class PlayerController : MonoBehaviour
                 signal.GetComponent<Light>().enabled = true;
             }
             oneblink.SetActive(true);
+            _audioManager.Play("Indicator");
             oneSignal = true;
             timer = 0.4f;
         }
@@ -205,7 +225,7 @@ public class PlayerController : MonoBehaviour
                 light_signal.GetComponent<Light>().enabled = !light_signal.GetComponent<Light>().enabled;
             }
             blink.GetComponent<Renderer>().enabled = !blink.GetComponent<Renderer>().enabled ;
-            timer = 0.4f;
+            timer = 0.3f;
         }
     }
 }

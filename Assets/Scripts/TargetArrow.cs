@@ -8,7 +8,6 @@ public class TargetArrow : MonoBehaviour
     [SerializeField] private float rotationSpeed;
     private PickUpField target;
     [SerializeField] private AllPickUps AllPickUpsScript;
-    [SerializeField] private PickUpField startingPickUp;
 
     // Start is called before the first frame update
     void Start()

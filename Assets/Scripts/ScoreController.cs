@@ -18,7 +18,7 @@ public class ScoreController : MonoBehaviour
     public UnityEvent OnCrash;
     
     [SerializeField] private CameraFollow camera;
-
+    private AudioManager _audioManager;
     private void Awake()
     {
         Freeze = false;
@@ -30,6 +30,7 @@ public class ScoreController : MonoBehaviour
         Delivery = 0;
         damage = 0.05f;
         Freeze = false;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +38,7 @@ public class ScoreController : MonoBehaviour
         if (other.gameObject.CompareTag("PickUp"))
         {
             Delivery++;
+            _audioManager.Play("PickUp");
             OnScoreChanged.Invoke();
             OnPickUpReached.Invoke();
         }
