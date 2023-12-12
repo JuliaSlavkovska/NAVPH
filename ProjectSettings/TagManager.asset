@@ -8,6 +8,8 @@ TagManager:
   - Yield
   - Cube
   - PickUp
+  - Fluid
+  - OppositeYield
   layers:
   - Default
   - TransparentFX

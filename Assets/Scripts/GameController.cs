@@ -17,22 +17,20 @@ public class GameController : MonoBehaviour
 
         for(var i = 0; i < 100; ++i)
         {
-            SpawnCar();
+            SpawnCar(i);
         }
     }
 
-    void SpawnCar()
+    void SpawnCar(int i)
     {
         // Get random waypoint from a random crossroad
         var idx = Random.Range(0, crossroads.Count);
         var waypoint = crossroads[idx].GetComponent<Crossroad>().getRandomEdge();
-        if (!waypoint)
-            Debug.Log(idx);
-
-
+        
         GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Count)]);
         newCar.GetComponent<CarMover>().setWaypoint(waypoint);
         newCar.transform.parent = allCars.transform;
+        newCar.name = "Car " + i;
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;

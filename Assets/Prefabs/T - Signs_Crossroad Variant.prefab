@@ -9,8 +9,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1958744765791807489, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: rightWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1958744765791807489, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1958744765791807489, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.data[0]
@@ -20,13 +24,17 @@ PrefabInstance:
       propertyPath: directions.Array.data[1]
       value: 
       objectReference: {fileID: 9081293196046891932}
+    - target: {fileID: 1958744765791807489, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: directions.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2112788043768919592, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2691655123820696536, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: waypoints.Array.size
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2691655123820696536, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -35,11 +43,11 @@ PrefabInstance:
     - target: {fileID: 2691655123820696536, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: waypoints.Array.data[1]
       value: 
-      objectReference: {fileID: 3616101387683518784}
+      objectReference: {fileID: 4942693247327499408}
     - target: {fileID: 2691655123820696536, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: waypoints.Array.data[2]
       value: 
-      objectReference: {fileID: 4942693247327499408}
+      objectReference: {fileID: 4427998986768836473}
     - target: {fileID: 2691655123820696536, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: waypoints.Array.data[3]
       value: 
@@ -65,15 +73,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3687129487986791724, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: leftWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3687129487986791724, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3687129487986791724, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.data[0]
       value: 
-      objectReference: {fileID: 3616101387683518784}
+      objectReference: {fileID: 0}
     - target: {fileID: 3687129487986791724, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.data[1]
+      value: 
+      objectReference: {fileID: 3616101387683518784}
+    - target: {fileID: 3687129487986791724, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: directions.Array.data[2]
       value: 
       objectReference: {fileID: 1371936172074239101}
     - target: {fileID: 4356880968646863637, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
@@ -89,17 +105,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5390738900427343557, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: straightWaypoint
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390738900427343557, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5390738900427343557, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.data[0]
       value: 
-      objectReference: {fileID: 3616101387683518784}
+      objectReference: {fileID: 9081293196046891932}
     - target: {fileID: 5390738900427343557, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: directions.Array.data[1]
       value: 
-      objectReference: {fileID: 9081293196046891932}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5390738900427343557, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
+      propertyPath: directions.Array.data[2]
+      value: 
+      objectReference: {fileID: 3616101387683518784}
     - target: {fileID: 7742243627001484237, guid: e72be23de119aa141afb9cbc00965ac4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 23.58
