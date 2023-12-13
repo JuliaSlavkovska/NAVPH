@@ -10,7 +10,6 @@ public class CarMover : MonoBehaviour
     // Uklada referenciu na waypoint system ktory tento objekt pouziva
     [SerializeField] WaypointEdge currentWaypoint;
     [SerializeField] WaypointEdge nextWaypoint;
-    [SerializeField] private WaypointEdge lastWaypoint;
     public bool turningLeft = false;
     [SerializeField] private float timer = 5f;
     [SerializeField] private float moveSpeed = 0f;
@@ -54,8 +53,7 @@ public class CarMover : MonoBehaviour
                 // Entering crossroad
                 if (!turningLeft)
                     detector.detectCollision = false;
-                Debug.Log(name + " entering. Next waypoint = " + nextWaypoint.name);
-                lastWaypoint = currentWaypoint;
+                //Debug.Log(name + " entering. Next waypoint = " + nextWaypoint.name);
                 currentWaypoint = nextWaypoint;
             }
             else
@@ -63,9 +61,8 @@ public class CarMover : MonoBehaviour
                 // Exiting crossroad
                 detector.detectCollision = true;
                 turningLeft = false;
-                lastWaypoint = currentWaypoint;
                 currentWaypoint = currentWaypoint.GetNext();
-                Debug.Log(name + "_ exiting. Next waypoint = " + currentWaypoint.name);
+                //Debug.Log(name + "_ exiting. Next waypoint = " + currentWaypoint.name);
             }
             
         }
@@ -99,14 +96,13 @@ public class CarMover : MonoBehaviour
 
     public void setBrake(bool value)
     {
-        Debug.Log(name + " setting brake to " + value);
+        //Debug.Log(name + " setting brake to " + value);
         
         brake = value;
     }
 
     public void setWaypoint(WaypointEdge waypoint)
     {
-        lastWaypoint = currentWaypoint;
         currentWaypoint = waypoint;
     }
 
