@@ -3971,6 +3971,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1840640359074167881}
+  - component: {fileID: 4045969822645334013}
   m_Layer: 0
   m_Name: Car_NO.1201
   m_TagString: Untagged
@@ -4016,6 +4017,27 @@ Transform:
   - {fileID: 420100464033776943}
   m_Father: {fileID: 6473623313680519784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4045969822645334013
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7264949645788506549}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.1960723, y: 1.5076666, z: 4.4919143}
+  m_Center: {x: 0.05918535, y: 0.7531028, z: 0.38714537}
 --- !u!1 &7266923355440210107
 GameObject:
   m_ObjectHideFlags: 0
@@ -4252,6 +4274,7 @@ MonoBehaviour:
   LeftBlink: {fileID: 4039589219601864322}
   RightBlink: {fileID: 7140844119341317693}
   objekt: {fileID: 7572048136914133810}
+  scoreController: {fileID: 0}
   speed: 0
   maxSpeed: 30
   rotationAngle: 0
@@ -4379,12 +4402,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1960723, y: 1.5076666, z: 4.4919143}
-  m_Center: {x: 0.05918535, y: 0.7531028, z: 0.38714537}
+  m_Size: {x: 2.1960723, y: 1.2246956, z: 4.091195}
+  m_Center: {x: 0, y: 0.1414855, z: 0.20035982}
 --- !u!1 &7592806182753269089
 GameObject:
   m_ObjectHideFlags: 0
