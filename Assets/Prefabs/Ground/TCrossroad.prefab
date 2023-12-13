@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain_road_8_3_bigRoadCrossWalk (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1095459714561772, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4008219820542332, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -154,6 +158,10 @@ PrefabInstance:
     - target: {fileID: 1095459714561772, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
       propertyPath: m_Name
       value: Terrain_road_8_3_bigRoadCrossWalk (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095459714561772, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4008219820542332, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
       propertyPath: m_LocalScale.x
@@ -263,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain_road_8x8_bigT
       objectReference: {fileID: 0}
+    - target: {fileID: 1112721281702112, guid: afb15bf0590a25f4e90d07fe61f4da26, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4617941190278024, guid: afb15bf0590a25f4e90d07fe61f4da26, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -370,6 +382,10 @@ PrefabInstance:
     - target: {fileID: 1095459714561772, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
       propertyPath: m_Name
       value: Terrain_road_8_3_bigRoadCrossWalk (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1095459714561772, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4008219820542332, guid: 205008ff43ce1d848b6adec4bb9ff421, type: 3}
       propertyPath: m_LocalScale.x

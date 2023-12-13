@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4966019521655493641}
   - component: {fileID: 1484455932704967794}
   - component: {fileID: 6567018328076973329}
-  - component: {fileID: 7546026810263116060}
+  - component: {fileID: 676547736208648942}
   m_Layer: 0
   m_Name: Street1
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &7546026810263116060
+--- !u!64 &676547736208648942
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

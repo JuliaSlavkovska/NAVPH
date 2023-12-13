@@ -17,6 +17,10 @@ public class ScoreController : MonoBehaviour
     public UnityEvent OnPickUpReached;
     public UnityEvent OnCrash;
     
+    private Ray ray;
+
+
+    
     [SerializeField] private CameraFollow camera;
     private AudioManager _audioManager;
     private void Awake()
@@ -31,6 +35,29 @@ public class ScoreController : MonoBehaviour
         damage = 0.05f;
         Freeze = false;
         _audioManager = FindObjectOfType<AudioManager>();
+        
+    }
+
+    private void Update()
+    {
+        CheckOnTrack();
+    }
+
+    private void CheckOnTrack()
+    {
+        ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            if(hit.collider.tag == "Grass")
+            {
+                Debug.Log("Hit grass"); 
+            }
+            if(hit.collider.tag == "Ground")
+            {
+                Debug.Log("Hit Ground"); 
+            }
+            
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +71,7 @@ public class ScoreController : MonoBehaviour
         }
     }
     
+
     private void OnCollisionEnter(Collision other)
     {
         

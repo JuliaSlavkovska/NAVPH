@@ -66,6 +66,16 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             CarMovement();
             Blinks();
+            
+            /*Nefunkčná rotácia
+            if (transform.eulerAngles.z > 20 || transform.eulerAngles.x > 30 )
+            {
+                Debug.Log(transform.eulerAngles);
+                Debug.Log(transform.localEulerAngles);
+                objekt.GetComponent<ScoreController>().RestartGame();
+
+            }
+            */
         }
     }
     
