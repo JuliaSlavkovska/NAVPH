@@ -107,10 +107,10 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) {
 
             if (speed > 3)
-                transform.Rotate(0, -rotationAngle, 0);
+                transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
                 
             else if(speed<-3)
-                transform.Rotate(0, rotationAngle, 0);
+                transform.Rotate(0, rotationAngle * Time.deltaTime, 0);
             
         }
         
@@ -130,9 +130,9 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             if(speed<-3)
-                transform.Rotate(0, -rotationAngle, 0);
+                transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
             else if(speed>3)
-                transform.Rotate(0, rotationAngle, 0);
+                transform.Rotate(0, rotationAngle * Time.deltaTime, 0);
             
         }
     }

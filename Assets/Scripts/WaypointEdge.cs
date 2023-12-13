@@ -21,7 +21,7 @@ public class WaypointEdge : MonoBehaviour
     [SerializeField] private WaypointEdge leftWaypoint;
     [SerializeField] private WaypointEdge straightWaypoint;
     [SerializeField] private WaypointEdge rightWaypoint;
-    
+    public bool spawnedCar = false;
     [SerializeField] private bool isMainRoad;
     [SerializeField] public bool isEntrance;
     // The node to the left, which will be blocked on unmarked crossroads (yielding right)

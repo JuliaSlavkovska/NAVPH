@@ -9,13 +9,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
+    [SerializeField] private List<WaypointEdge> allWaypoints = new List<WaypointEdge>();
+    [SerializeField] private int carCount;
     [SerializeField] GameObject allCars;
 
     void Start()
     {
 
 
-        for(var i = 0; i < 100; ++i)
+        for(var i = 0; i < carCount; ++i)
         {
             SpawnCar(i);
         }
@@ -24,8 +26,13 @@ public class GameController : MonoBehaviour
     void SpawnCar(int i)
     {
         // Get random waypoint from a random crossroad
-        var idx = Random.Range(0, crossroads.Count);
-        var waypoint = crossroads[idx].GetComponent<Crossroad>().getRandomEdge();
+        WaypointEdge waypoint;
+        do
+        {
+            waypoint = allWaypoints[Random.Range(0, allWaypoints.Count)];
+        } while (waypoint.spawnedCar);
+
+        waypoint.spawnedCar = true;
         
         GameObject newCar = Instantiate(carPrefabs[Random.Range(0, carPrefabs.Count)]);
         newCar.GetComponent<CarMover>().setWaypoint(waypoint);
