@@ -6658,6 +6658,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1883954488496355029, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.380165
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883954488496355029, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.3600936
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883954488496355029, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.053928375
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883954488496355029, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.32123494
+      objectReference: {fileID: 0}
+    - target: {fileID: 1883954488496355029, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
         type: 3}
       propertyPath: maxSpeed
@@ -6666,8 +6691,18 @@ PrefabInstance:
     - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
         type: 3}
       propertyPath: rotationAngle
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: turnTimerLimit
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}
+      propertyPath: scoreController
+      value: 
+      objectReference: {fileID: 1391092401}
     - target: {fileID: 5642558799490741299, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
         type: 3}
       propertyPath: _audioManager
@@ -6843,7 +6878,8 @@ PrefabInstance:
       propertyPath: AllPickUpsScript
       value: 
       objectReference: {fileID: 1032726473}
-    m_RemovedComponents: []
+    m_RemovedComponents: [{fileID: 4045969822645334013, guid: b713ecbe49ee9b549a59b3d5fbf6f481,
+        type: 3}]
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
