@@ -55,10 +55,10 @@ public class ScoreController : MonoBehaviour
     }
     
     //dorobit kedy sa realne ma odratat zdravie
-    private void RuleBroken()
+    public void RuleBroken()
     {
         Health-=damage; 
-
+        //TODO aktualizovat HUD
     }
     
     

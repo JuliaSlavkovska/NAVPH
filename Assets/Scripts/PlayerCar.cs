@@ -9,17 +9,16 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
     
-    
     [Header("Lights")]
     [SerializeField] private GameObject RightTurns;
     [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
     [SerializeField] private GameObject objekt;
+    [SerializeField] private ScoreController scoreController;
+    [SerializeField] private float turnTimerLimit;
+    [SerializeField] private float turnTimer;
     
-    
-    
-
     bool RightTurn = false;
     bool LeftTurn = false;
     //private bool Freeze = false;
@@ -29,13 +28,14 @@ public class PlayerController : MonoBehaviour
     
     [Header("Speed")]
     [SerializeField]float speed;
-    [SerializeField] float maxSpeed = 30.0f;
+    [SerializeField] float maxSpeed;
     [SerializeField] float rotationAngle;
     
 
     
     void Start()
     {
+        
         foreach (Transform light_signal in RightTurns.transform)
         {
             light_signal.GetComponent<Light>().enabled = false;
@@ -51,18 +51,32 @@ public class PlayerController : MonoBehaviour
 
         speed =0f;
         timer = 0.4f;
-        rotationAngle = 0.4f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!objekt.GetComponent<ScoreController>().Freeze)
+        if (!scoreController.Freeze)
         {
             //move
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             CarMovement();
             Blinks();
+        }
+    }
+    
+    
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Yield"))
+        {
+            Debug.Log("Score deducted");
+            scoreController.RuleBroken();
+        }
+        else if(other.CompareTag("Car"))
+        {
+            Debug.Log("Game Over");
         }
     }
     
@@ -98,17 +112,27 @@ public class PlayerController : MonoBehaviour
             if (speed < 0)
             {
                 speed += 0.2f;
-            }else if (speed <= maxSpeed)
+            }else 
             {
-                speed += 0.1f;
+                speed = Mathf.Clamp(speed + 0.1f, 0, maxSpeed);
             }
         }
         
         if (Input.GetKey(KeyCode.A)) {
 
             if (speed > 3)
+            {
                 transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
-                
+                if (turnTimer < turnTimerLimit)
+                {
+                    turnTimer = Mathf.Clamp(turnTimer + Time.deltaTime, 0, turnTimerLimit);
+                    if (Mathf.Approximately(turnTimer, turnTimerLimit))
+                    {
+                        Debug.Log("Turning detected!");
+                    }
+                }
+            }
+
             else if(speed<-3)
                 transform.Rotate(0, rotationAngle * Time.deltaTime, 0);
             
@@ -131,11 +155,28 @@ public class PlayerController : MonoBehaviour
         {
             if(speed<-3)
                 transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
-            else if(speed>3)
+            else if (speed > 3)
+            {
                 transform.Rotate(0, rotationAngle * Time.deltaTime, 0);
-            
+                if (turnTimer < turnTimerLimit)
+                {
+                    turnTimer = Mathf.Clamp(turnTimer + Time.deltaTime, 0, turnTimerLimit);
+                    if (Mathf.Approximately(turnTimer, turnTimerLimit))
+                    {
+                        Debug.Log("Turning detected!");
+                    }
+                }            }
+
         }
+        
+        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+        {
+            turnTimer = 0;
+        }
+
+
     }
+    
 
     void Blinks()
     {
