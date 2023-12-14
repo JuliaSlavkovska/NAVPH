@@ -168,8 +168,10 @@ public class PlayerController : MonoBehaviour
                     turnTimer = Mathf.Clamp(turnTimer + Time.deltaTime, 0, turnTimerLimit);
                     if (Mathf.Approximately(turnTimer, turnTimerLimit))
                     {
-                        Debug.Log("Turning detected!");
-                    }
+                        if (!LeftTurn)
+                        {
+                            Debug.Log("Illegal turning detected!");
+                        }                    }
                 }
             }
 
@@ -203,9 +205,14 @@ public class PlayerController : MonoBehaviour
                     turnTimer = Mathf.Clamp(turnTimer + Time.deltaTime, 0, turnTimerLimit);
                     if (Mathf.Approximately(turnTimer, turnTimerLimit))
                     {
-                        Debug.Log("Turning detected!");
+                        if (!RightTurn)
+                        {
+                            Debug.Log("Illegal turning detected!");
+                        }
+                        
                     }
-                }            }
+                }            
+            }
 
         }
         
