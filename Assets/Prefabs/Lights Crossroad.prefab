@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 674414562204753400}
   - component: {fileID: 7584425702034558494}
   m_Layer: 0
-  m_Name: Waypoint (8)
+  m_Name: Exit 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 6274682879184381298}
   - component: {fileID: 4771652642497765900}
   m_Layer: 0
-  m_Name: Waypoint (6)
+  m_Name: Exit 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4276794561066910566}
   - component: {fileID: 8885603553784180300}
   m_Layer: 0
-  m_Name: Waypoint (9)
+  m_Name: Entrance 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 3266827749210124299}
   - component: {fileID: 1008246538641725214}
   m_Layer: 0
-  m_Name: Waypoint (5)
+  m_Name: Entrance 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 4043454527865350974}
   - component: {fileID: 3184025390547076406}
   m_Layer: 0
-  m_Name: Waypoint (4)
+  m_Name: Exit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 836777702080407352}
   - component: {fileID: 3388640469406958599}
   m_Layer: 0
-  m_Name: Waypoint (2)
+  m_Name: Exit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -665,7 +665,7 @@ GameObject:
   - component: {fileID: 1129123764017474053}
   - component: {fileID: 3486428950580487671}
   m_Layer: 0
-  m_Name: Waypoint (3)
+  m_Name: Entrance 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -747,7 +747,7 @@ GameObject:
   - component: {fileID: 5144935001268613093}
   - component: {fileID: 6976810646739922256}
   m_Layer: 0
-  m_Name: Waypoint (7)
+  m_Name: Entrance 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

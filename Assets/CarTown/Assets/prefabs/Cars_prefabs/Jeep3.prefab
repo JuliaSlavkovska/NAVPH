@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 3.2000003, y: 3.2000003, z: 3.2000003}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3995206482097124407}
@@ -101,12 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf2418d35d10d54d9816452e2036771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentWaypoint: {fileID: 0}
+  nextWaypoint: {fileID: 0}
+  turningLeft: 0
+  timer: 5
   moveSpeed: 0
-  maxSpeed: 38
-  acceleration: 0.075
+  maxSpeed: 45
+  maxSpeedConstant: 45
+  crossroadSpeedConstant: 35
+  acceleration: 0.08
   brakeForce: 0.75
   rotateSpeed: 3
   detector: {fileID: 8437869112242074899}
+  brake: 0
 --- !u!54 &4466023324052565882
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -374,8 +381,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.5, y: 2, z: 3}
-  m_Center: {x: 0, y: 1.5, z: 2.5}
+  m_Size: {x: 3.5, y: 2, z: 2.5}
+  m_Center: {x: 0, y: 1.5, z: 2.25}
 --- !u!114 &8437869112242074899
 MonoBehaviour:
   m_ObjectHideFlags: 0

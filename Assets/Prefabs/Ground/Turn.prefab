@@ -161,7 +161,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008828592444758810, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: m_Name
-      value: Waypoint (3)
+      value: Turn 4
       objectReference: {fileID: 0}
     - target: {fileID: 6491004084758927465, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: directions.Array.size
@@ -231,7 +231,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008828592444758810, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: m_Name
-      value: Waypoint (4)
+      value: Turn 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -304,7 +304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008828592444758810, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: m_Name
-      value: Waypoint (2)
+      value: Turn 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -377,7 +377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008828592444758810, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: m_Name
-      value: Waypoint
+      value: Turn 1
       objectReference: {fileID: 0}
     - target: {fileID: 6491004084758927465, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: directions.Array.size
@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2008828592444758810, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: m_Name
-      value: Waypoint (1)
+      value: Turn 2
       objectReference: {fileID: 0}
     - target: {fileID: 6491004084758927465, guid: f015b4a861e108147bc135213a110d76, type: 3}
       propertyPath: directions.Array.size
