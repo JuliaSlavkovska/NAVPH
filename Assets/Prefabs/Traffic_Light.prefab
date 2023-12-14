@@ -222,9 +222,10 @@ GameObject:
   - component: {fileID: 3160585410423326596}
   - component: {fileID: 7249275157209352221}
   - component: {fileID: 9181837724134513120}
+  - component: {fileID: 5911958880370825085}
   m_Layer: 0
   m_Name: Traffic_Light
-  m_TagString: Untagged
+  m_TagString: Prop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,6 +317,28 @@ MonoBehaviour:
   timerMain: 10
   timerYellow: 2
   startGreen: 1
+  barrier: {fileID: 0}
+--- !u!65 &5911958880370825085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5149475051416771820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2336884, y: 7.4485145, z: 1.0731201}
+  m_Center: {x: -0.19462323, y: 3.7242572, z: -0.17090613}
 --- !u!1 &8362679933860912235
 GameObject:
   m_ObjectHideFlags: 0

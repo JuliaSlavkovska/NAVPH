@@ -39,7 +39,6 @@ public class GameController : MonoBehaviour
         newCar.GetComponent<CarMover>().setWaypoint(waypoint);
         newCar.transform.parent = allCars.transform;
         newCar.name = "Car " + i;
-        Debug.Log(newCar.name + "Setting the first waypoint to " + waypoint.name);
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;
