@@ -13,7 +13,9 @@ public class CarMover : MonoBehaviour
     public bool turningLeft = false;
     [SerializeField] private float timer = 5f;
     [SerializeField] private float moveSpeed = 0f;
-    [SerializeField] private float maxSpeed = 10f;
+    [SerializeField] public float maxSpeed = 10f;
+    [SerializeField] public float maxSpeedConstant;
+    [SerializeField] public float crossroadSpeedConstant;
     [SerializeField] private float acceleration = 0.03f;
     [SerializeField] private float brakeForce = 0.03f;
     [SerializeField] private float rotateSpeed = 4f;
@@ -83,6 +85,10 @@ public class CarMover : MonoBehaviour
         if (moveSpeed < maxSpeed)
         {
             moveSpeed += acceleration;
+        }
+        else if(moveSpeed > maxSpeed)
+        {
+            moveSpeed -= brakeForce;
         }
     }
 

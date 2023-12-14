@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class GameController : MonoBehaviour
@@ -9,7 +10,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
-    [SerializeField] private List<WaypointEdge> allWaypoints = new List<WaypointEdge>();
+    [SerializeField] private List<WaypointEdge> spawnWaypoints = new List<WaypointEdge>();
     [SerializeField] private int carCount;
     [SerializeField] GameObject allCars;
 
@@ -29,7 +30,7 @@ public class GameController : MonoBehaviour
         WaypointEdge waypoint;
         do
         {
-            waypoint = allWaypoints[Random.Range(0, allWaypoints.Count)];
+            waypoint = spawnWaypoints[Random.Range(0, spawnWaypoints.Count)];
         } while (waypoint.spawnedCar);
 
         waypoint.spawnedCar = true;
@@ -38,9 +39,11 @@ public class GameController : MonoBehaviour
         newCar.GetComponent<CarMover>().setWaypoint(waypoint);
         newCar.transform.parent = allCars.transform;
         newCar.name = "Car " + i;
+        Debug.Log(newCar.name + "Setting the first waypoint to " + waypoint.name);
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;
+            
 
         
     }

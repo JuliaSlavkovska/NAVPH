@@ -51,8 +51,8 @@ public class WaypointEdge : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isMainRoad && other.gameObject.CompareTag("Car") ||
-            other.gameObject.CompareTag("Player"))
+        if (isMainRoad && (other.gameObject.CompareTag("Car") ||
+            other.gameObject.CompareTag("Player")))
         {
             numOfCars++;
         }
@@ -69,7 +69,12 @@ public class WaypointEdge : MonoBehaviour
             else if (next == straightWaypoint)
                 direction = Direction.Straight;
             
-            other.GetComponent<CarMover>().setNextWaypoint(next, direction);
+            var carMover = other.GetComponent<CarMover>();
+            carMover.setNextWaypoint(next, direction);
+
+            if (!isMainRoad || carMover.turningLeft)
+                carMover.maxSpeed = carMover.crossroadSpeedConstant;
+
         }
 
     }
@@ -78,11 +83,18 @@ public class WaypointEdge : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (isMainRoad && other.gameObject.CompareTag("Car") ||
-            other.gameObject.CompareTag("Player"))
+        if (isMainRoad && (other.gameObject.CompareTag("Car") ||
+            other.gameObject.CompareTag("Player")))
         {
             numOfCars--;
             
+        }
+
+        if (other.CompareTag("Car"))
+        {
+            var carMover = other.GetComponent<CarMover>();
+
+            carMover.maxSpeed = carMover.maxSpeedConstant;
         }
 
 
