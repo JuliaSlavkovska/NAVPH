@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     
 
     private AudioManager _audioManager;
+    float anglez;
+    float anglex;
+    
     
     void Start()
     {
@@ -66,16 +69,23 @@ public class PlayerController : MonoBehaviour
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
             CarMovement();
             Blinks();
-            
-            /*Nefunkčná rotácia
-            if (transform.eulerAngles.z > 20 || transform.eulerAngles.x > 30 )
-            {
-                Debug.Log(transform.eulerAngles);
-                Debug.Log(transform.localEulerAngles);
-                objekt.GetComponent<ScoreController>().RestartGame();
+            CarFlip();
 
-            }
-            */
+        }
+    }
+
+    void CarFlip()
+    {
+        anglez = transform.localEulerAngles.z;
+        anglex = transform.localEulerAngles.x;
+
+        anglez = (anglez > 180) ? anglez - 360 : anglez;
+        anglex = (anglex > 180) ? anglex - 360 : anglex;
+        
+        //GameOver
+        if ((anglez > 20 || anglez < -20 ) || (anglex > 20 || anglex < -20 ) )
+        {
+            objekt.GetComponent<ScoreController>().RestartGame();
         }
     }
     

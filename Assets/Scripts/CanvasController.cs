@@ -15,6 +15,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private TMP_Text _DeliveryResults;
     [SerializeField] private TMP_Text _RulesResults;
+    [SerializeField] private TMP_Text _GameOverReason;
     [SerializeField] private GameObject PlayerViewPanel;
     [SerializeField] private GameObject RestartGamePanel;
  
@@ -31,11 +32,11 @@ public class CanvasController : MonoBehaviour
     
     public void GameOver(ScoreController scoreController)
     {
-        int broken_rules = (int)((1 - scoreController.Health) / scoreController.damage);
         PlayerViewPanel.SetActive(false);
         RestartGamePanel.SetActive(true);
+        _GameOverReason.text = scoreController.GameOverReason;
         _DeliveryResults.text = "Sucessful delivery: " + scoreController.Delivery;
-        _RulesResults.text = "Broken rules: " + broken_rules;
+        _RulesResults.text = "Broken rules: " + scoreController.BrokenRules;
 
     }
     
