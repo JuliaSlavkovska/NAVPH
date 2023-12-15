@@ -42,6 +42,9 @@ public class GameController : MonoBehaviour
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;
+        //newCar.GetComponent<IndicatorControl>().LeftBlink(true);
+        //newCar.GetComponent<IndicatorControl>().RightBlink(true);
+   
             
 
         
