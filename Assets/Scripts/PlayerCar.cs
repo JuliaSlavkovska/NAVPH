@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -187,7 +188,7 @@ public class PlayerController : MonoBehaviour
         //flashing when signal is turn on
         if (RightTurn)
             SignalLightFlashing(rlights, RightBlink);
-
+        
         if (LeftTurn)
             SignalLightFlashing(llights, LeftBlink);
     }
@@ -248,4 +249,5 @@ public class PlayerController : MonoBehaviour
             timer = 0.3f;
         }
     }
+    
 }

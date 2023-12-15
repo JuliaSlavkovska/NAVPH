@@ -81,7 +81,6 @@ public class ScoreController : MonoBehaviour
         }
     }
     
-
     private void OnCollisionEnter(Collision other)
     {
         
