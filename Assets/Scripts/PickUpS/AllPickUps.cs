@@ -11,7 +11,8 @@ public class AllPickUps : MonoBehaviour
     private int old_pickup_index;
     void Awake()
     {
-        old_pickup_index=pickup_index = Random.Range(0, PickUps.Count-1);
+        old_pickup_index = pickup_index = 2;
+        //old_pickup_index=pickup_index = Random.Range(0, PickUps.Count-1);
         PickUps[pickup_index].gameObject.SetActive(true);
         
     }

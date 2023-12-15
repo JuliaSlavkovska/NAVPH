@@ -8,14 +8,16 @@ TagManager:
   - Yield
   - Cube
   - PickUp
+  - Ground
+  - Grass
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
+  - Grass
   - 
   - 
   - 
