@@ -99,7 +99,6 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Yield"))
         {
             Debug.Log("Score deducted");
-            scoreController.RuleBroken();
         }
         else if(other.CompareTag("Car") || other.CompareTag("Prop"))
         {
