@@ -47,13 +47,13 @@ MonoBehaviour:
   sounds:
   - name: PickUp
     clip: {fileID: 8300000, guid: c5d9795a15909f7499275a5b9c3b2c07, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: City
     clip: {fileID: 8300000, guid: 6d0e34cd834ed5447b7d68ed95a8cf92, type: 3}
-    volume: 0.8
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -65,13 +65,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: CarIdle
     clip: {fileID: 8300000, guid: e3a113943568bdf4683154eff52c476b, type: 3}
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Indicator
     clip: {fileID: 8300000, guid: 6ef7685c8a41a224b95a33ed0457a1c8, type: 3}
-    volume: 0.5
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: a751d6229acca7447881df8179465df4, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Background
+    clip: {fileID: 8300000, guid: 59c91ae931aeebe4f835b5037ac5d6e7, type: 3}
+    volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}

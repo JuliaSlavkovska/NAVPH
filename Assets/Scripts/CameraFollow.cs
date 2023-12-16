@@ -9,9 +9,10 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float minAngle;
     [SerializeField] private float maxAngle;
     float yRotate = 0.0f;
-    private bool freeze = false;
+
     private float eulerx; 
     private float eulerz; 
+    public bool Freeze { get; private set; }
 
     void Start () {
         speed = 3;
@@ -23,7 +24,7 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        if (freeze is false)
+        if (Freeze is false)
         {
             yRotate += Input.GetAxis("Mouse X") * speed;
             yRotate = Mathf.Clamp(yRotate, minAngle, maxAngle);
@@ -35,8 +36,8 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    public void FreezeCam()
+    public void FreezeCam(bool status)
     {
-        freeze = true;
+        Freeze = status;
     }
 }

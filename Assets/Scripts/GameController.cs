@@ -4,16 +4,19 @@ using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static GameController instance;
     [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
     [SerializeField] private List<WaypointEdge> spawnWaypoints = new List<WaypointEdge>();
     [SerializeField] private int carCount;
     [SerializeField] GameObject allCars;
+    
 
+    
     void Start()
     {
 
@@ -22,6 +25,8 @@ public class GameController : MonoBehaviour
         {
             SpawnCar(i);
         }
+
+        //_scoreController.FreezeCam(false);
     }
 
     void SpawnCar(int i)
@@ -49,5 +54,45 @@ public class GameController : MonoBehaviour
 
         
     }
+
+    /*
+    public void GameOver(string reason)
+    {
+        _scoreController.FreezeCam(true);
+        GameOverReason = reason;
+        _audioManager.StopAll();
+        _audioManager.Play("GameOver");
+        
+    }
+    
+    public void RestartGame()
+    {
+        _scoreController.RestoreScore();
+        _audioManager.PlayOnStart();
+        _scoreController.FreezeCam(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        
+    }
+    
+    public void BackToMenu()
+    {
+        _scoreController.FreezeCam(false);
+        _audioManager.PlayOnGameStart();
+        _scoreController.RestoreScore();
+        SceneManager.LoadScene(0);
+        
+    }
+    
+    public void PlayGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+    */
+
 
 }

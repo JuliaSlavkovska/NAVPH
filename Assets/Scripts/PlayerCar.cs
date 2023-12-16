@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     
 
     private AudioManager _audioManager;
+    private ScoreController _scoreController;
     float anglez;
     float anglex;
     
@@ -60,13 +61,14 @@ public class PlayerController : MonoBehaviour
         speed =0f;
         timer = 0.4f;
         _audioManager = FindObjectOfType<AudioManager>();
+        _scoreController = FindObjectOfType<ScoreController>();
         _audioManager.Play("CarIdle");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!scoreController.Freeze)
+        if (!_scoreController.getCamStatus())
         {
             //move
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -88,7 +90,7 @@ public class PlayerController : MonoBehaviour
         //GameOver
         if ((anglez > 20 || anglez < -20 ) || (anglex > 20 || anglex < -20 ) )
         {
-            objekt.GetComponent<ScoreController>().RestartGame();
+            //objekt.GetComponent<ScoreController>().RestartGame();
         }
     }
     

@@ -5,17 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cca82af-d0af-47e6-b2f1-eb7b3ee80e3c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/HeavyTruck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/HeavyTruck.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Jeep3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightCar3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightTruck.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/LightTruck.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Pickup.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/Pickup.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/RaceCar1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CarTown/Assets/prefabs/Cars_prefabs/RaceCar1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/IndicatorControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/IndicatorControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TraficTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/AudioManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/AudioManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/RealMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RealMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Town.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Town.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CameraFollow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/FadeAudioSource.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/MenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/AllPickUps.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpArrow.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PickUpS/PickUpField.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +57,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "IndicatorsNPC",
+    "git-widget-placeholder": "SoundEffects",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",

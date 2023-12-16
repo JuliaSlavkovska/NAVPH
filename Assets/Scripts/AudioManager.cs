@@ -31,7 +31,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("City");
+        PlayOnGameStart();
     }
 
     // Update is called once per frame
@@ -55,6 +55,30 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Stop();
+    }
+    
+    public void StopAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.Stop();
+        }
+        
+    }
+
+    //zaciatok levelu
+    public void PlayOnStart()
+    {
+        StopAll();
+        Play("City");
+        FadeIn("Background", 0.5f, 0.3f);
+    }
+    
+    //zaciatok hry ako takej
+    public void PlayOnGameStart()
+    {
+        StopAll();
+        Play("Background");
     }
     
     public void FadeIn(string name, float duration, float targetVolume)
