@@ -59,12 +59,21 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+    public void CheckTurn()
+    {
+        ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out RaycastHit hit) && !hit.collider.CompareTag("Turn"))
+        {
+            RuleBroken();
+        }
+    }
+
     private void CheckOnTrack()
     {
         ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit))
         {
-            if(hit.collider.tag == "Grass")
+            if(hit.collider.CompareTag("Grass"))
             {
                 if (Time.time - _start_time > 1)
                 {
@@ -74,7 +83,7 @@ public class ScoreController : MonoBehaviour
                 
                 OnScoreChanged.Invoke();
             }
-            if(hit.collider.tag == "Ground")
+            if(hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Turn"))
             {
                 _start_time = Time.time;
             }
@@ -82,32 +91,39 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("PickUp"))
+    {     
+        if (other.CompareTag("PickUp"))
         {
             Delivery++;
             _audioManager.Play("PickUp");
             OnScoreChanged.Invoke();
             OnPickUpReached.Invoke();
         }
-    }
-    
-    private void OnCollisionEnter(Collision other)
-    {
-            if (other.gameObject.CompareTag("Cube"))
-            {
-                initializeGameOver("Crash!");
-            }
+        else if (other.CompareTag("Yield"))
+        {
+            Debug.Log("Rule broken");
+            RuleBroken();        
+        }
+        
+        else if (other.CompareTag("Cube") || 
+            other.CompareTag("Car") ||
+            other.CompareTag("Prop"))
+        {
+            initializeGameOver("Crash!");
+        }
 
     }
 
     
     //dorobit kedy sa realne ma odratat zdravie
-    private void RuleBroken()
+    public void RuleBroken()
     {
+        BrokenRules++;
         Health-=damage;
         _audioManager.Play("Fail");
+        OnScoreChanged.Invoke();
         
         //Game Over
         if (Health <= 0)

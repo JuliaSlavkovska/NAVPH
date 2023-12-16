@@ -72,17 +72,6 @@ public class PlayerController : MonoBehaviour
     
     
 
-    public void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Yield"))
-        {
-            Debug.Log("Score deducted");
-        }
-        else if(other.CompareTag("Car") || other.CompareTag("Prop"))
-        {
-            Debug.Log("Game Over");
-        }
-    }
     
     void CarMovement()
     {
@@ -147,7 +136,8 @@ public class PlayerController : MonoBehaviour
                     {
                         if (!LeftTurn)
                         {
-                            Debug.Log("Illegal turning detected!");
+                            // Turning without a blinker
+                            _scoreController.RuleBroken();
                         }                    }
                 }
             }

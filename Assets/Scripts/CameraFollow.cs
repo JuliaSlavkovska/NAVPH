@@ -30,10 +30,6 @@ public class CameraFollow : MonoBehaviour
             yRotate = Mathf.Clamp(yRotate, minAngle, maxAngle);
             transform.localRotation = Quaternion.Euler(eulerx, yRotate, eulerz);
         }
-        else
-        {
-            Debug.Log("V else");
-        }
     }
     
 
