@@ -107,16 +107,19 @@ public class ScoreController : MonoBehaviour
     {
             if (other.gameObject.CompareTag("Cube"))
             {
+                _audioManager.Play("Crash");
                 _menuController.GameOver("Crash!");
                 OnCrash.Invoke();
             }
 
     }
+
     
     //dorobit kedy sa realne ma odratat zdravie
     private void RuleBroken()
     {
         Health-=damage;
+        _audioManager.Play("Fail");
         
         //Game Over
         if (Health <= 0)

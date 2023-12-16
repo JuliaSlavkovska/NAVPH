@@ -35,6 +35,7 @@ public class CameraFollow : MonoBehaviour
             Debug.Log("V else");
         }
     }
+    
 
     public void FreezeCam(bool status)
     {
