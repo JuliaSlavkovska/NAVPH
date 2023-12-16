@@ -20,6 +20,7 @@ public class CarMover : MonoBehaviour
     [SerializeField] private float brakeForce = 0.03f;
     [SerializeField] private float rotateSpeed = 4f;
     [SerializeField] private CarCollisionDetection detector;
+    [SerializeField] private IndicatorControl indicatorControl;
     [SerializeField] private bool brake = false;
     private Quaternion rotationGoal;
     private Vector3 directionToWaypoint;
@@ -63,6 +64,8 @@ public class CarMover : MonoBehaviour
                 // Exiting crossroad
                 detector.detectCollision = true;
                 turningLeft = false;
+                indicatorControl.LeftBlink(false);
+                indicatorControl.RightBlink(false);
                 currentWaypoint = currentWaypoint.GetNext();
                 //Debug.Log(name + "_ exiting. Next waypoint = " + currentWaypoint.name);
             }
@@ -120,12 +123,13 @@ public class CarMover : MonoBehaviour
         {
             // Left turn - yield to opposite
             // Blinkers
+            indicatorControl.LeftBlink(true);
             turningLeft = true;
-            // TODO turn off 
         }
         else if (direction == Direction.Right)
         {
             // Blinkers
+            indicatorControl.RightBlink(true);
         }
         
     }

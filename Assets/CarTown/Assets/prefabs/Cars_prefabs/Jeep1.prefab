@@ -282,6 +282,7 @@ MonoBehaviour:
   brakeForce: 0.75
   rotateSpeed: 3
   detector: {fileID: 5852071859008566812}
+  indicatorControl: {fileID: 7341753070466250315}
   brake: 0
 --- !u!54 &296582595477566327
 Rigidbody:

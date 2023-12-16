@@ -43,47 +43,23 @@ public class IndicatorControl : MonoBehaviour
 
     public void LeftBlink(bool state)
     {
-        if (state)
+        foreach (Transform signal in llights)
         {
-            foreach (Transform signal in llights)
-            {
-                signal.GetComponent<Light>().enabled = true;
-            }
-
-            LeftTurn = true;
+            signal.GetComponent<Light>().enabled = state;
         }
-        else
-        {
-            foreach (Transform signal in llights)
-            {
-                signal.GetComponent<Light>().enabled = false;
-            }
+        LeftTurn = state;
 
-            LeftTurn = false;
-        }
         
     }
     
     public void RightBlink(bool state)
     {
-        if (state)
+        foreach (Transform signal in rlights)
         {
-            foreach (Transform signal in rlights)
-            {
-                signal.GetComponent<Light>().enabled = true;
-            }
-
-            RightTurn = true;
+            signal.GetComponent<Light>().enabled = state;
         }
-        else
-        {
-            foreach (Transform signal in rlights)
-            {
-                signal.GetComponent<Light>().enabled = false;
-            }
-
-            RightTurn = false;
-        }
+        RightTurn = state;
+        
         
     }
 
