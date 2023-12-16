@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8791049977580914776}
   - component: {fileID: 4250709029838828693}
   m_Layer: 0
-  m_Name: Waypoint_8 (7)
+  m_Name: Entrance 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,10 +50,12 @@ MonoBehaviour:
   - {fileID: 1664494323144719124}
   - {fileID: 1859732253449399807}
   - {fileID: 5141060680170884890}
+  leftWaypoint: {fileID: 1859732253449399807}
+  straightWaypoint: {fileID: 1664494323144719124}
+  rightWaypoint: {fileID: 5141060680170884890}
+  spawnedCar: 0
   isMainRoad: 1
   isEntrance: 1
-  leftTurn: {fileID: 1859732253449399807}
-  opposite: {fileID: 4874822850897321306}
   leftYield: {fileID: 8319287423246697702}
   numOfCars: 0
   blocker: {fileID: 2109661557810492858}
@@ -143,7 +145,7 @@ GameObject:
   - component: {fileID: 2955856801818658136}
   - component: {fileID: 7810925583469031015}
   m_Layer: 0
-  m_Name: Waypoint_8 (8)
+  m_Name: Exit 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -177,10 +179,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -197,7 +201,7 @@ GameObject:
   - component: {fileID: 8319287423246697702}
   - component: {fileID: 6471574581990020387}
   m_Layer: 0
-  m_Name: Waypoint_8 (9)
+  m_Name: Entrance 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,10 +239,12 @@ MonoBehaviour:
   - {fileID: 7810925583469031015}
   - {fileID: 1664494323144719124}
   - {fileID: 5141060680170884890}
+  leftWaypoint: {fileID: 1664494323144719124}
+  straightWaypoint: {fileID: 5141060680170884890}
+  rightWaypoint: {fileID: 7810925583469031015}
+  spawnedCar: 0
   isMainRoad: 1
   isEntrance: 1
-  leftTurn: {fileID: 1664494323144719124}
-  opposite: {fileID: 8047958163800358952}
   leftYield: {fileID: 4874822850897321306}
   numOfCars: 0
   blocker: {fileID: 3715417241263324008}
@@ -275,7 +281,7 @@ GameObject:
   - component: {fileID: 3978195567657566604}
   - component: {fileID: 1664494323144719124}
   m_Layer: 0
-  m_Name: Waypoint_8 (4)
+  m_Name: Exit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -309,10 +315,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -434,7 +442,7 @@ GameObject:
   - component: {fileID: 3990061786232426172}
   - component: {fileID: 1859732253449399807}
   m_Layer: 0
-  m_Name: Waypoint_8 (2)
+  m_Name: Exit 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -468,10 +476,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -541,7 +551,7 @@ GameObject:
   - component: {fileID: 4874822850897321306}
   - component: {fileID: 8822193110028459539}
   m_Layer: 0
-  m_Name: Waypoint_8 (3)
+  m_Name: Entrance 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -579,10 +589,12 @@ MonoBehaviour:
   - {fileID: 1859732253449399807}
   - {fileID: 7810925583469031015}
   - {fileID: 5141060680170884890}
+  leftWaypoint: {fileID: 5141060680170884890}
+  straightWaypoint: {fileID: 7810925583469031015}
+  rightWaypoint: {fileID: 1859732253449399807}
+  spawnedCar: 0
   isMainRoad: 1
   isEntrance: 1
-  leftTurn: {fileID: 5141060680170884890}
-  opposite: {fileID: 8791049977580914776}
   leftYield: {fileID: 8047958163800358952}
   numOfCars: 0
   blocker: {fileID: 5384856892713162000}
@@ -620,7 +632,7 @@ GameObject:
   - component: {fileID: 8047958163800358952}
   - component: {fileID: 7147519013174345357}
   m_Layer: 0
-  m_Name: Waypoint_8 (6)
+  m_Name: Entrance 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -658,11 +670,13 @@ MonoBehaviour:
   - {fileID: 1664494323144719124}
   - {fileID: 7810925583469031015}
   - {fileID: 1859732253449399807}
+  leftWaypoint: {fileID: 7810925583469031015}
+  straightWaypoint: {fileID: 1859732253449399807}
+  rightWaypoint: {fileID: 1664494323144719124}
+  spawnedCar: 0
   isMainRoad: 1
   isEntrance: 1
-  leftTurn: {fileID: 1664494323144719124}
-  opposite: {fileID: 8319287423246697702}
-  leftYield: {fileID: 4874822850897321306}
+  leftYield: {fileID: 8791049977580914776}
   numOfCars: 0
   blocker: {fileID: 3638363273867116985}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
@@ -698,7 +712,7 @@ GameObject:
   - component: {fileID: 3592859949388965338}
   - component: {fileID: 5141060680170884890}
   m_Layer: 0
-  m_Name: Waypoint_8 (5)
+  m_Name: Exit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -732,10 +746,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -793,9 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - {fileID: 1859732253449399807}
   - {fileID: 4874822850897321306}
-  - {fileID: 1664494323144719124}
   - {fileID: 8791049977580914776}
-  - {fileID: 7810925583469031015}
   - {fileID: 8319287423246697702}
+  - {fileID: 8047958163800358952}

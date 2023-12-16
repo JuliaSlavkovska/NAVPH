@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 674414562204753400}
   - component: {fileID: 7584425702034558494}
   m_Layer: 0
-  m_Name: Waypoint (8)
+  m_Name: Exit 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,10 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -64,7 +66,7 @@ GameObject:
   - component: {fileID: 6274682879184381298}
   - component: {fileID: 4771652642497765900}
   m_Layer: 0
-  m_Name: Waypoint (6)
+  m_Name: Exit 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,10 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -116,8 +120,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7403876914135729188}
   - component: {fileID: 4276794561066910566}
+  - component: {fileID: 8885603553784180300}
   m_Layer: 0
-  m_Name: Waypoint (9)
+  m_Name: Entrance 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,14 +161,37 @@ MonoBehaviour:
   - {fileID: 7584425702034558494}
   - {fileID: 4771652642497765900}
   - {fileID: 3184025390547076406}
+  leftWaypoint: {fileID: 3184025390547076406}
+  straightWaypoint: {fileID: 4771652642497765900}
+  rightWaypoint: {fileID: 7584425702034558494}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 1
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 3266827749210124299}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
+--- !u!65 &8885603553784180300
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921435898651242037}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.361389, y: 1, z: 14.22762}
+  m_Center: {x: 0, y: 0, z: -7.113808}
 --- !u!1 &3121926495439956646
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +218,7 @@ Transform:
   m_GameObject: {fileID: 3121926495439956646}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,7 +239,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -270,13 +298,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints:
-  - {fileID: 3388640469406958599}
   - {fileID: 1129123764017474053}
-  - {fileID: 3184025390547076406}
   - {fileID: 3266827749210124299}
-  - {fileID: 4771652642497765900}
   - {fileID: 5144935001268613093}
-  - {fileID: 7584425702034558494}
   - {fileID: 4276794561066910566}
 --- !u!1 &5101739857787393186
 GameObject:
@@ -288,8 +312,9 @@ GameObject:
   m_Component:
   - component: {fileID: 347892378954045535}
   - component: {fileID: 3266827749210124299}
+  - component: {fileID: 1008246538641725214}
   m_Layer: 0
-  m_Name: Waypoint (5)
+  m_Name: Entrance 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -328,14 +353,37 @@ MonoBehaviour:
   - {fileID: 3388640469406958599}
   - {fileID: 3184025390547076406}
   - {fileID: 7584425702034558494}
+  leftWaypoint: {fileID: 7584425702034558494}
+  straightWaypoint: {fileID: 3388640469406958599}
+  rightWaypoint: {fileID: 3184025390547076406}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 1
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 4276794561066910566}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
+--- !u!65 &1008246538641725214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5101739857787393186}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.361389, y: 1, z: 14.22762}
+  m_Center: {x: 0, y: 0, z: 7.113808}
 --- !u!1 &5171445492088178706
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +395,7 @@ GameObject:
   - component: {fileID: 4043454527865350974}
   - component: {fileID: 3184025390547076406}
   m_Layer: 0
-  m_Name: Waypoint (4)
+  m_Name: Exit 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -381,10 +429,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -400,7 +450,7 @@ GameObject:
   - component: {fileID: 836777702080407352}
   - component: {fileID: 3388640469406958599}
   m_Layer: 0
-  m_Name: Waypoint (2)
+  m_Name: Exit 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,10 +484,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
+  leftWaypoint: {fileID: 0}
+  straightWaypoint: {fileID: 0}
+  rightWaypoint: {fileID: 0}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 0
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 0}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
@@ -468,7 +520,7 @@ Transform:
   m_GameObject: {fileID: 6655577862484215730}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -489,7 +541,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -521,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 6659303893572660238}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -542,7 +594,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -574,7 +626,7 @@ Transform:
   m_GameObject: {fileID: 8048027221145712465}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -595,7 +647,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -611,8 +663,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6144191623009126633}
   - component: {fileID: 1129123764017474053}
+  - component: {fileID: 3486428950580487671}
   m_Layer: 0
-  m_Name: Waypoint (3)
+  m_Name: Entrance 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,14 +704,37 @@ MonoBehaviour:
   - {fileID: 3388640469406958599}
   - {fileID: 4771652642497765900}
   - {fileID: 7584425702034558494}
+  leftWaypoint: {fileID: 4771652642497765900}
+  straightWaypoint: {fileID: 7584425702034558494}
+  rightWaypoint: {fileID: 3388640469406958599}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 1
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 5144935001268613093}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 6659303893572660238}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
+--- !u!65 &3486428950580487671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598823530608443396}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.227615, y: 1, z: 3.3613892}
+  m_Center: {x: -7.1138077, y: 0, z: 0.13163452}
 --- !u!1 &9040570684966079690
 GameObject:
   m_ObjectHideFlags: 0
@@ -669,8 +745,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1479450828076020335}
   - component: {fileID: 5144935001268613093}
+  - component: {fileID: 6976810646739922256}
   m_Layer: 0
-  m_Name: Waypoint (7)
+  m_Name: Entrance 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -709,14 +786,37 @@ MonoBehaviour:
   - {fileID: 3388640469406958599}
   - {fileID: 3184025390547076406}
   - {fileID: 4771652642497765900}
+  leftWaypoint: {fileID: 3388640469406958599}
+  straightWaypoint: {fileID: 3184025390547076406}
+  rightWaypoint: {fileID: 4771652642497765900}
+  spawnedCar: 0
   isMainRoad: 0
   isEntrance: 1
-  leftTurn: {fileID: 0}
-  opposite: {fileID: 1129123764017474053}
   leftYield: {fileID: 0}
   numOfCars: 0
   blocker: {fileID: 0}
   color: {r: 0.22677112, g: 0.26983023, b: 0.9811321, a: 1}
+--- !u!65 &6976810646739922256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9040570684966079690}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.227615, y: 1, z: 3.3613892}
+  m_Center: {x: 7.113808, y: 0, z: 0.13163452}
 --- !u!1001 &2333966818322205189
 PrefabInstance:
   m_ObjectHideFlags: 0
