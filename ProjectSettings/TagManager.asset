@@ -12,6 +12,8 @@ TagManager:
   - OppositeYield
   - Ground
   - Grass
+  - Prop
+  - Turn
   layers:
   - Default
   - TransparentFX

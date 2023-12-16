@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject RightBlink;
     [SerializeField] private float turnTimerLimit;
     [SerializeField] private float turnTimer;
+    [SerializeField] private GameObject EasterEgg;
     bool RightTurn = false;
     bool LeftTurn = false;
 
@@ -186,6 +187,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
         {
             turnTimer = 0;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            EasterEgg.SetActive(!EasterEgg.activeSelf);
         }
     }
 
