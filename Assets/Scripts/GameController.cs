@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
     [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
     [SerializeField] private List<WaypointEdge> spawnWaypoints = new List<WaypointEdge>();
     [SerializeField] private int carCount;
     [SerializeField] GameObject allCars;
-
+    
+    
     void Start()
     {
-
-
         for(var i = 0; i < carCount; ++i)
         {
             SpawnCar(i);
@@ -49,5 +47,5 @@ public class GameController : MonoBehaviour
 
         
     }
-
+    
 }

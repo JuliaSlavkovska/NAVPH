@@ -12,61 +12,38 @@ public class PlayerController : MonoBehaviour
     
     
     [Header("Lights")]
-    [SerializeField] private GameObject RightTurns;
-    [SerializeField] private GameObject LeftTurns;
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
-    [SerializeField] private GameObject objekt;
-    [SerializeField] private ScoreController scoreController;
     [SerializeField] private float turnTimerLimit;
     [SerializeField] private float turnTimer;
-    
-    
-    
-
     bool RightTurn = false;
     bool LeftTurn = false;
-    //private bool Freeze = false;
-    private float timer;
-    private List<Transform> rlights = new List<Transform>();
-    private List<Transform> llights = new List<Transform>();
+
+    private float timer = 0.4f;
     
     [Header("Speed")]
-    [SerializeField]float speed;
+    [SerializeField]float speed = 0;
     [SerializeField] float maxSpeed;
     [SerializeField] float rotationAngle;
     
 
     private AudioManager _audioManager;
+    private ScoreController _scoreController;
     float anglez;
     float anglex;
     
     
     void Start()
     {
-        foreach (Transform light_signal in RightTurns.transform)
-        {
-            light_signal.GetComponent<Light>().enabled = false;
-            rlights.Add(light_signal);
-        }
-        foreach (Transform light_signal in LeftTurns.transform)
-        {
-            light_signal.GetComponent<Light>().enabled = false;
-            llights.Add(light_signal);
-        }
-        LeftBlink.SetActive(false);
-        RightBlink.SetActive(false);
-
-        speed =0f;
-        timer = 0.4f;
         _audioManager = FindObjectOfType<AudioManager>();
+        _scoreController = FindObjectOfType<ScoreController>();
         _audioManager.Play("CarIdle");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!scoreController.Freeze)
+        if (!_scoreController.getCamStatus())
         {
             //move
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -76,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+    
 
     void CarFlip()
     {
@@ -86,9 +64,9 @@ public class PlayerController : MonoBehaviour
         anglex = (anglex > 180) ? anglex - 360 : anglex;
         
         //GameOver
-        if ((anglez > 20 || anglez < -20 ) || (anglex > 20 || anglex < -20 ) )
+        if ((anglez > 30 || anglez < -30 ) || (anglex > 30 || anglex < -30 ) )
         {
-            objekt.GetComponent<ScoreController>().RestartGame();
+            _scoreController.initializeGameOver("Car flip");
         }
     }
     
@@ -225,29 +203,25 @@ public class PlayerController : MonoBehaviour
     {
         //Right signal
         if (Input.GetKeyDown((KeyCode.Mouse1)))
-            SignalLightControl(ref RightTurn, rlights, ref LeftTurn, llights, RightBlink, LeftBlink);
+            SignalLightControl(ref RightTurn, ref LeftTurn, RightBlink, LeftBlink);
 
 
         //Left signal
         if (Input.GetKeyDown((KeyCode.Mouse0)))
-            SignalLightControl(ref LeftTurn, llights, ref RightTurn, rlights, LeftBlink, RightBlink);          
+            SignalLightControl(ref LeftTurn, ref RightTurn,  LeftBlink, RightBlink);          
         
         //flashing when signal is turn on
         if (RightTurn)
-            SignalLightFlashing(rlights, RightBlink);
+            SignalLightFlashing(RightBlink);
 
         if (LeftTurn)
-            SignalLightFlashing(llights, LeftBlink);
+            SignalLightFlashing(LeftBlink);
     }
-    void SignalLightControl(ref bool oneSignal, List<Transform> oneSignals, ref bool secondSignal, List<Transform> secondSignals, GameObject oneblink, GameObject secondblink) {
+    void SignalLightControl(ref bool oneSignal, ref bool secondSignal, GameObject oneblink, GameObject secondblink) {
         //timer = 0.4f;
         //signal on, turn off
         if (oneSignal)
         {
-            foreach (Transform signal in oneSignals)
-            {
-                signal.GetComponent<Light>().enabled = false;
-            }
             oneblink.SetActive(false);
             _audioManager.Stop("Indicator");
             oneSignal = false;
@@ -258,18 +232,9 @@ public class PlayerController : MonoBehaviour
         {
             if (secondSignal)
             {
-                foreach (Transform signal in secondSignals)
-                {
-                    signal.GetComponent<Light>().enabled = false;
-                }
                 secondblink.SetActive(false);
                 _audioManager.Stop("Indicator");
                 secondSignal = false;
-            }
-
-            foreach (Transform signal in oneSignals)
-            {
-                signal.GetComponent<Light>().enabled = true;
             }
             oneblink.SetActive(true);
             _audioManager.Play("Indicator");
@@ -278,7 +243,7 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-    void SignalLightFlashing(List<Transform> lights, GameObject blink)
+    void SignalLightFlashing(GameObject blink)
     {
         if (timer > 0)
         {
@@ -287,10 +252,6 @@ public class PlayerController : MonoBehaviour
 
         if (timer <= 0)
         {
-            foreach (Transform light_signal in lights)
-            {
-                light_signal.GetComponent<Light>().enabled = !light_signal.GetComponent<Light>().enabled;
-            }
             blink.GetComponent<Renderer>().enabled = !blink.GetComponent<Renderer>().enabled ;
             timer = 0.3f;
         }

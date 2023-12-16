@@ -8,11 +8,13 @@ using UnityEngine.SceneManagement;
 public class ScoreController : MonoBehaviour
 {
 
-    public bool Freeze { get; private set; }
+    public static ScoreController instance;
+    
     public int Delivery { get; private set; }
     public float Health { get; private set; }
     public float BrokenRules { get; private set; }
-    public string GameOverReason { get; private set; }
+    
+    [SerializeField] private CameraFollow camera;
 
     public UnityEvent OnScoreChanged;
     public UnityEvent OnPickUpReached;
@@ -22,29 +24,39 @@ public class ScoreController : MonoBehaviour
     private float _start_time;
 
 
-    
-    [SerializeField] private CameraFollow camera;
     private AudioManager _audioManager;
+    private MenuController _menuController;
     private float damage;
+
     private void Awake()
     {
-        Freeze = false;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
-
+    
     void Start()
     {
         Health = 1f;
         Delivery = 0;
         damage = 0.05f;
-        Freeze = false;
         BrokenRules = 0;
         _audioManager = FindObjectOfType<AudioManager>();
+        _menuController = FindObjectOfType<MenuController>();
         
     }
-
+    
     private void Update()
     {
-        CheckOnTrack();
+        if (!camera.Freeze)
+        {
+            CheckOnTrack();
+        }
     }
 
     private void CheckOnTrack()
@@ -83,53 +95,48 @@ public class ScoreController : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        
-        if (other.gameObject.CompareTag("Cube"))
-        {
-            Freeze = true;
-            camera.FreezeCam();
-            GameOverReason = "Crash!";
-            OnCrash.Invoke();
-        }
+            if (other.gameObject.CompareTag("Cube"))
+            {
+                initializeGameOver("Crash!");
+            }
 
     }
+
     
     //dorobit kedy sa realne ma odratat zdravie
     private void RuleBroken()
     {
         Health-=damage;
+        _audioManager.Play("Fail");
         
         //Game Over
         if (Health <= 0)
         {
-            Freeze = true;
-            camera.FreezeCam();
-            GameOverReason = "Out of lives!";
-            OnCrash.Invoke();
+            initializeGameOver("Out of lives!");
         }
 
     }
-    
-    
-    
-    //premiestnot nejako asi do GameController
 
-    public void RestartGame()
+    public void initializeGameOver(string reason)
+    {
+        _menuController.GameOver(reason);
+        OnCrash.Invoke();
+    }
+
+    public void RestoreScore()
     {
         Delivery = 0;
         Health = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
-    }
-    
-    //premiestnot nejako asi do GameController
-    public void BackToMenu()
-    {
-        Delivery = 0;
-        Health = 1;
-        SceneManager.LoadScene(0);
-        
     }
 
+    public void FreezeCam(bool status)
+    {
+        camera.FreezeCam(status);
+    }
+    
+    public bool getCamStatus()
+    {
+        return camera.Freeze;
+    }
 
 }
