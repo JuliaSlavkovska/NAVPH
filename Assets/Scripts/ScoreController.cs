@@ -50,17 +50,7 @@ public class ScoreController : MonoBehaviour
         _menuController = FindObjectOfType<MenuController>();
         
     }
-
-    public void FreezeCam(bool status)
-    {
-        camera.FreezeCam(status);
-    }
     
-    public bool getCamStatus()
-    {
-        return camera.Freeze;
-    }
-
     private void Update()
     {
         if (!camera.Freeze)
@@ -107,9 +97,7 @@ public class ScoreController : MonoBehaviour
     {
             if (other.gameObject.CompareTag("Cube"))
             {
-                _audioManager.Play("Crash");
-                _menuController.GameOver("Crash!");
-                OnCrash.Invoke();
+                initializeGameOver("Crash!");
             }
 
     }
@@ -124,12 +112,16 @@ public class ScoreController : MonoBehaviour
         //Game Over
         if (Health <= 0)
         {
-            _menuController.GameOver("Out of lives!!");
-            OnCrash.Invoke();
+            initializeGameOver("Out of lives!");
         }
 
     }
-    
+
+    public void initializeGameOver(string reason)
+    {
+        _menuController.GameOver(reason);
+        OnCrash.Invoke();
+    }
 
     public void RestoreScore()
     {
@@ -137,5 +129,14 @@ public class ScoreController : MonoBehaviour
         Health = 1;
     }
 
+    public void FreezeCam(bool status)
+    {
+        camera.FreezeCam(status);
+    }
+    
+    public bool getCamStatus()
+    {
+        return camera.Freeze;
+    }
 
 }

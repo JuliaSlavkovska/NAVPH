@@ -5,9 +5,6 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-
 public class CanvasController : MonoBehaviour
 {
 

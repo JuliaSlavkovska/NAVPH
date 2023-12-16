@@ -93,9 +93,3 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: Crash
-    clip: {fileID: 8300000, guid: 9418e00b7d18ba64eb29fc3eae6001a7, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}

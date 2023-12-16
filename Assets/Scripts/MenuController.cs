@@ -21,17 +21,10 @@ public class MenuController : MonoBehaviour
     {
         _scoreController.FreezeCam(true);
         GameOverReason = reason;
-        StartCoroutine("Example");
-
-    }
-    
-    IEnumerator Example()
-    {
-        yield return new WaitForSecondsRealtime(0.5f);
         _audioManager.FadeIn("Background", 0.5f, 1);
         _audioManager.StopAll();
         _audioManager.Play("GameOver");
-        
+
     }
     
     public void RestartGame()
