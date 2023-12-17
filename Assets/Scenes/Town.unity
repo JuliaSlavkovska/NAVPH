@@ -6167,8 +6167,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2134002465}
     - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481, type: 3}
+      propertyPath: BrakeForce
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481, type: 3}
       propertyPath: rotationAngle
-      value: 40
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2758119883495071202, guid: b713ecbe49ee9b549a59b3d5fbf6f481, type: 3}
       propertyPath: turnTimerLimit

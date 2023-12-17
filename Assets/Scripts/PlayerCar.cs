@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float speed = 0;
     [SerializeField] float maxSpeed;
     [SerializeField] float rotationAngle;
+    [SerializeField] private float BrakeForce;
     
 
     bool RightTurn = false;
@@ -87,7 +88,7 @@ public class PlayerController : MonoBehaviour
         {
             if (speed > 0)
             {
-                speed -= 0.2f;
+                speed -= BrakeForce;
             }else
             {
                 speed += 0.2f;
@@ -164,7 +165,7 @@ public class PlayerController : MonoBehaviour
             //if car was moving forward (previosly pressed "w"), and now pressed "s", slow down from moving forward to zero
             if (speed > 0)
             {
-                speed -= 0.2f;
+                speed -= BrakeForce;
             }
             else if(speed >= -1*maxSpeed)
             {
