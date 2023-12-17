@@ -76,19 +76,19 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - name: GameOver
-    clip: {fileID: 8300000, guid: a751d6229acca7447881df8179465df4, type: 3}
+    clip: {fileID: 8300000, guid: 75985f62b42830948b99097497a14788, type: 3}
     volume: 1
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Background
-    clip: {fileID: 8300000, guid: 59c91ae931aeebe4f835b5037ac5d6e7, type: 3}
+    clip: {fileID: 8300000, guid: 72c6c58413e34df4b95ebefd8a23624b, type: 3}
     volume: 1
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Fail
-    clip: {fileID: 8300000, guid: 3bdc3f1c3b8bea54e944ef0544919935, type: 3}
+    clip: {fileID: 8300000, guid: e4672fe1e79d91646a6135cd90c634f0, type: 3}
     volume: 1
     pitch: 1
     loop: 0
