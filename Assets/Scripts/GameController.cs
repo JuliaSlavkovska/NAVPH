@@ -1,15 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
-using UnityEngine.SceneManagement;
 
+//script for initial car spawning
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private List<GameObject> crossroads = new List<GameObject>();
-    [SerializeField] private List<GameObject> carPrefabs = new List<GameObject>();
-    [SerializeField] private List<WaypointEdge> spawnWaypoints = new List<WaypointEdge>();
+    [SerializeField] private List<GameObject> carPrefabs;
+    [SerializeField] private List<WaypointEdge> spawnWaypoints;
     [SerializeField] private int carCount;
     [SerializeField] GameObject allCars;
     
@@ -40,12 +37,7 @@ public class GameController : MonoBehaviour
 
         newCar.transform.LookAt(waypoint.transform);
         newCar.transform.position = waypoint.transform.position;
-        //newCar.GetComponent<IndicatorControl>().LeftBlink(true);
-        //newCar.GetComponent<IndicatorControl>().RightBlink(true);
-   
-            
 
-        
     }
     
 }

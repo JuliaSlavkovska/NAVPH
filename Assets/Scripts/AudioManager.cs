@@ -1,11 +1,13 @@
 using System;
 using UnityEngine;
-using UnityEngine.Audio;
 
+//script for managing audio in game
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
+    
+    //load all sounds to sound manager, for more easily management
     void Awake()
     {
         if (instance == null)
@@ -24,7 +26,6 @@ public class AudioManager : MonoBehaviour
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
     }
@@ -33,8 +34,8 @@ public class AudioManager : MonoBehaviour
     {
         PlayOnGameStart();
     }
-
-    // Update is called once per frame
+    
+    //play specific sound
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name );
@@ -46,6 +47,7 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
     
+    //stop playing specific sound
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name );
@@ -57,6 +59,7 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
     
+    //stop playing all sounds
     public void StopAll()
     {
         foreach (Sound s in sounds)
@@ -66,7 +69,7 @@ public class AudioManager : MonoBehaviour
         
     }
 
-    //zaciatok levelu
+    //start playing these sounds when Scene Town loads
     public void PlayOnStart()
     {
         StopAll();
@@ -74,13 +77,15 @@ public class AudioManager : MonoBehaviour
         FadeIn("Background", 0.5f, 0.3f);
     }
     
-    //zaciatok hry ako takej
+    //start playing these sounds when Game loads - Scene with Menu
     public void PlayOnGameStart()
     {
         StopAll();
         Play("Background");
     }
     
+    
+    //used for FadeIn specific sounds
     public void FadeIn(string name, float duration, float targetVolume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name );
@@ -92,6 +97,8 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
         StartCoroutine(FadeAudioSource.StartFade(s.source, duration, targetVolume, true));
     }
+    
+    //used for FadeIn specific sounds - previously used with "cracking" sounds, which are commented
     public void FadeOut(string name, float duration, float targetVolume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name );

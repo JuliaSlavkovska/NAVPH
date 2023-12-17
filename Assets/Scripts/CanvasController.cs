@@ -1,15 +1,14 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+//script for controlling Canvas
 public class CanvasController : MonoBehaviour
 {
 
     [SerializeField] private TMP_Text _DeliveryPlayer;
-    
     [SerializeField] private Slider _slider;
     [SerializeField] private TMP_Text _DeliveryResults;
     [SerializeField] private TMP_Text _RulesResults;
@@ -19,8 +18,7 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private TMP_Text _Warning;
     
     private MenuController _menuController;
-
-
+    
     private void Start()
     {
         _menuController = FindObjectOfType<MenuController>();
@@ -40,9 +38,10 @@ public class CanvasController : MonoBehaviour
     {
         _Warning.gameObject.SetActive(true);
         _Warning.text = scoreController.BrokenRule;
-        StartCoroutine(EnableGameoverPanel ());
+        StartCoroutine(ClearWarning ()); // desapearing warning after specific amount of seconds
     }
     
+    //change Panel object to Gameover from Player screen
     public void GameOver(ScoreController scoreController)
     {
         PlayerViewPanel.SetActive(false);
@@ -53,7 +52,8 @@ public class CanvasController : MonoBehaviour
 
     }
     
-    IEnumerator EnableGameoverPanel()
+    //clear warning
+    IEnumerator ClearWarning()
     {
         yield return new WaitForSeconds(3);
         _Warning.gameObject.SetActive(false);

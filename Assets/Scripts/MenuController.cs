@@ -1,26 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//script for controling Game actions
 public class MenuController : MonoBehaviour
 {
-    //public static MenuController instance;
     private AudioManager _audioManager;
     private ScoreController _scoreController;
     
-    public string GameOverReason { get; private set; }
+    public string GameOverReason { get; private set; }  //reason for gameOver printed on GameOverscreen
     private void Start()
     {
-
         _audioManager = FindObjectOfType<AudioManager>();
         _scoreController = FindObjectOfType<ScoreController>();
-        
     }
+    
     public void GameOver(string reason)
     {
-        _scoreController.FreezeCam(true);
+        _scoreController.FreezeCam(true);   //if game over, freeze camera view
         GameOverReason = reason;
+        
+        //deal with audio
         _audioManager.FadeIn("Background", 0.5f, 1);
         _audioManager.StopAll();
         _audioManager.Play("GameOver");
@@ -47,7 +46,6 @@ public class MenuController : MonoBehaviour
     
     public void PlayGame()
     {
-        //_audioManager.FadeOut("Background", 0.5f, 0.3f);
         _audioManager.PlayOnStart();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

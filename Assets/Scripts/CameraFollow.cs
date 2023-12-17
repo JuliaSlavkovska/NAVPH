@@ -1,13 +1,11 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+//script for player camera rotation based on mouse possition
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private float speed;
-    [SerializeField] private float minAngle;
-    [SerializeField] private float maxAngle;
+    [SerializeField] private float speed = 3f;
+    [SerializeField] private float minAngle = -80.0f;
+    [SerializeField] private float maxAngle = 60.0f;
     float yRotate = 0.0f;
 
     private float eulerx; 
@@ -15,15 +13,13 @@ public class CameraFollow : MonoBehaviour
     public bool Freeze { get; private set; }
 
     void Start () {
-        speed = 3;
-        minAngle = -80.0f;
-        maxAngle = 60.0f;
         eulerx = transform.eulerAngles.x;
         eulerz = transform.eulerAngles.z;
     }
 
     void Update()
     {
+        //if game frozen (GameOver scene), stop rotate camera
         if (Freeze is false)
         {
             yRotate += Input.GetAxis("Mouse X") * speed;
@@ -33,6 +29,7 @@ public class CameraFollow : MonoBehaviour
     }
     
 
+    //function for setting frozen state
     public void FreezeCam(bool status)
     {
         Freeze = status;

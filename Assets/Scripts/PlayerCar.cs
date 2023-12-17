@@ -1,26 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
-
+//script for controoling player car
 public class PlayerController : MonoBehaviour
 {
-    
+    [SerializeField] private GameObject EasterEgg;
     
     [Header("Lights")]
     [SerializeField] private GameObject LeftBlink;
     [SerializeField] private GameObject RightBlink;
+    
+    [Header("Turn Timers")]
     [SerializeField] private float turnTimerLimit;
     [SerializeField] private float turnTimer;
-    [SerializeField] private GameObject EasterEgg;
-    bool RightTurn = false;
-    bool LeftTurn = false;
-
-    private float timer = 0.4f;
     
     [Header("Speed")]
     [SerializeField]float speed = 0;
@@ -28,6 +19,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float rotationAngle;
     
 
+    bool RightTurn = false;
+    bool LeftTurn = false;
+    private float timer = 0.4f; //timer for blinkers
+    
     private AudioManager _audioManager;
     private ScoreController _scoreController;
     float anglez;
@@ -41,13 +36,12 @@ public class PlayerController : MonoBehaviour
         //_audioManager.Play("CarIdle");
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (!_scoreController.getCamStatus())
+        if (!_scoreController.getCamStatus())   //if game is not frozen because of gameover
         {
-            //move
-            transform.Translate(Vector3.forward * Time.deltaTime * speed);
+            transform.Translate(Vector3.forward * Time.deltaTime * speed);  //move car forward/backward based on speed value
             CarMovement();
             Blinks();
             CarFlip();
@@ -56,6 +50,7 @@ public class PlayerController : MonoBehaviour
     }
     
 
+    //check if car dod not roll over
     void CarFlip()
     {
         anglez = transform.localEulerAngles.z;
@@ -71,12 +66,11 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    
 
-    
+    //controlling car movement
     void CarMovement()
     {
-        //spomaluj na nulu
+        //if not pressed any key, slow down to zero
         if (Input.GetKey(KeyCode.W) == false && Input.GetKey(KeyCode.S) == false)
         {
             if (speed > 0)
@@ -100,9 +94,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        /* Tento zvuk sposoboval praskanie, rozhdoli sme sa ho preto odstranit
-         //Zvuk motora
-         //Zvuk pri pridanvani plynu
+        /* These sounds were creating "cracking" sound on background, we removed them from game
+         *Engine sound
+         *Gass sound
          
         if (Input.GetKeyDown(KeyCode.W))
         {
@@ -118,23 +112,32 @@ public class PlayerController : MonoBehaviour
         }
         */
 
-        //WASD
+        //WASD controlling
         if (Input.GetKey(KeyCode.W))
         {
+            //if car was moving backward (previosly pressed "s"), and now pressed "w", slow down from moving backwards to zero
             if (speed < 0)
             {
                 speed += 0.2f;
-            }else 
+            }
+            
+            //move forward
+            else 
             {
                 speed = Mathf.Clamp(speed + 0.1f, 0, maxSpeed);
             }
         }
         
+        //turn left
         if (Input.GetKey(KeyCode.A)) {
-
+            
+            //correction of rotation based if car is moving forward, or backward.
+            //Not set >0, because the car was acting unreal with that
             if (speed > 3)
             {
                 transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
+                
+                //checking, if blinker wa on/off --- same have to be done in elfe if
                 if (turnTimer < turnTimerLimit)
                 {
                     turnTimer = Mathf.Clamp(turnTimer + Time.deltaTime, 0, turnTimerLimit);
@@ -153,8 +156,11 @@ public class PlayerController : MonoBehaviour
             
         }
         
+        
+        //moving backward
         if (Input.GetKey(KeyCode.S))
         { 
+            //if car was moving forward (previosly pressed "w"), and now pressed "s", slow down from moving forward to zero
             if (speed > 0)
             {
                 speed -= 0.2f;
@@ -166,8 +172,10 @@ public class PlayerController : MonoBehaviour
 
         }
         
+        //turn right
         if (Input.GetKey(KeyCode.D))
         {
+            //correction of rotation based if car is moving forward, or backward
             if(speed<-3)
                 transform.Rotate(0, -rotationAngle * Time.deltaTime, 0);
             else if (speed > 3)
@@ -200,14 +208,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //controlling blinkers
     void Blinks()
     {
-        //Right signal
+        //Right signal on/off
         if (Input.GetKeyDown((KeyCode.Mouse1)))
             SignalLightControl(ref RightTurn, ref LeftTurn, RightBlink, LeftBlink);
 
 
-        //Left signal
+        //Left signal on/off
         if (Input.GetKeyDown((KeyCode.Mouse0)))
             SignalLightControl(ref LeftTurn, ref RightTurn,  LeftBlink, RightBlink);          
         
@@ -218,8 +227,9 @@ public class PlayerController : MonoBehaviour
         if (LeftTurn)
             SignalLightFlashing(LeftBlink);
     }
+    
+    //if left blink is on and user pressed right blink, turn off left blink and turn on right blink. Same on the other way
     void SignalLightControl(ref bool oneSignal, ref bool secondSignal, GameObject oneblink, GameObject secondblink) {
-        //timer = 0.4f;
         //signal on, turn off
         if (oneSignal)
         {

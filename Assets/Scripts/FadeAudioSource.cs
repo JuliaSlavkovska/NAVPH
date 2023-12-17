@@ -1,6 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+//Used for Fading audio
+//source: https://johnleonardfrench.com/how-to-fade-audio-in-unity-i-tested-every-method-this-ones-the-best/
 public static class FadeAudioSource {
     public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume, bool FadeIn)
     {

@@ -1,10 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 
+//script for score manage
 public class ScoreController : MonoBehaviour
 {
 
@@ -70,6 +67,7 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+    //checking if car did not go off the route for more than 1 second
     private void CheckOnTrack()
     {
         ray = new Ray(transform.position, -transform.up);
@@ -94,6 +92,7 @@ public class ScoreController : MonoBehaviour
     }
 
 
+    //check if user picked up item
     private void OnTriggerEnter(Collider other)
     {     
         if (other.CompareTag("PickUp"))
