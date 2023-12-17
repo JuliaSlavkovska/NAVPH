@@ -9,8 +9,6 @@ public class WaypointEdge : MonoBehaviour
         Right
     }
 
-    // IMPORTANT - this projects code relies on WaypointEdge having the directions ordered:
-    // 0 = Left, 1 = Straight, 2 = Right
     [SerializeField] private WaypointEdge[] directions;
     [SerializeField] private WaypointEdge leftWaypoint;
     [SerializeField] private WaypointEdge straightWaypoint;

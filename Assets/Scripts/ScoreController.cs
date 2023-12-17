@@ -63,7 +63,6 @@ public class ScoreController : MonoBehaviour
         }
         else if (other.CompareTag("Yield"))
         {
-            Debug.Log("Rule broken");
             RuleBroken("You didn't give the right of way!");
         }
 
@@ -75,6 +74,8 @@ public class ScoreController : MonoBehaviour
         }
     }
 
+    // Check if player is on a turn or in a crossroad
+    // This helps to detect whether player used blinkers in a crossroad or not
     public void CheckTurn()
     {
         ray = new Ray(transform.position, -transform.up);
@@ -105,7 +106,6 @@ public class ScoreController : MonoBehaviour
     }
 
 
-    //dorobit kedy sa realne ma odratat zdravie
     public void RuleBroken(string reason)
     {
         BrokenRules++;

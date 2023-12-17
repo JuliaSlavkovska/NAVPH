@@ -10,7 +10,6 @@ public class CarCollisionDetection : MonoBehaviour
         if ((detectCollision && other.gameObject.CompareTag("Car")) ||
             other.gameObject.CompareTag("Yield") ||
             other.gameObject.CompareTag("Player"))
-            //Debug.Log(carMover.name + " colliding with " + other.name);
         {
             carMover.setBrake(true);
         }
@@ -21,7 +20,6 @@ public class CarCollisionDetection : MonoBehaviour
         if (other.gameObject.CompareTag("Car") ||
             other.gameObject.CompareTag("Yield") ||
             other.gameObject.CompareTag("Player"))
-            //Debug.Log(carMover.name + " ended collision with " + other.name);
             carMover.setBrake(false);
     }
 
@@ -30,7 +28,6 @@ public class CarCollisionDetection : MonoBehaviour
         if ((detectCollision && other.gameObject.CompareTag("Car")) ||
             other.gameObject.CompareTag("Yield") ||
             other.gameObject.CompareTag("Player"))
-            //Debug.Log(carMover.name + " colliding with " + other.name);
             carMover.setBrake(true);
     }
 }

@@ -14,7 +14,7 @@ public class SignsCrossroad : Crossroad
             carsOnMain += waypoint.numOfCars;
         if (!blocking && carsOnMain > 0)
         {
-            // block 
+            // Make other cars yield for this one
             blocking = true;
             foreach (var blocker in yieldBlockers) 
                 blocker.transform.localPosition = Vector3.zero;

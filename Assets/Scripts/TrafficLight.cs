@@ -80,8 +80,4 @@ public class TrafficLight : MonoBehaviour
         green.SetActive(true);
     }
 
-    public LightColor GetColor()
-    {
-        return currentColor;
-    }
 }

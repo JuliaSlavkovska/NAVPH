@@ -25,8 +25,6 @@ public class CarMover : MonoBehaviour
     private void Start()
     {
         //nastavi dalsi waypoint ciel
-        //currentWaypoint = currentWaypoint.GetNext();
-        //transform.position = currentWaypoint.transform.position;
         currentWaypoint = currentWaypoint.GetNext();
         transform.LookAt(currentWaypoint.transform);
     }
@@ -46,10 +44,9 @@ public class CarMover : MonoBehaviour
             // Reached the current target
             if (currentWaypoint.isEntrance)
             {
-                // Entering crossroad
+                // Entering crossroad - disable collision detection, except for when the car is turning left
                 if (!turningLeft)
                     detector.detectCollision = false;
-                //Debug.Log(name + " entering. Next waypoint = " + nextWaypoint.name);
                 currentWaypoint = nextWaypoint;
             }
             else
@@ -60,7 +57,6 @@ public class CarMover : MonoBehaviour
                 indicatorControl.LeftBlink(false);
                 indicatorControl.RightBlink(false);
                 currentWaypoint = currentWaypoint.GetNext();
-                //Debug.Log(name + "_ exiting. Next waypoint = " + currentWaypoint.name);
             }
         }
 
@@ -96,7 +92,6 @@ public class CarMover : MonoBehaviour
 
     public void setBrake(bool value)
     {
-        //Debug.Log(name + " setting brake to " + value);
 
         brake = value;
     }
