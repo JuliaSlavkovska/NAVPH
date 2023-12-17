@@ -193,7 +193,7 @@ MonoBehaviour:
   timer: 5
   moveSpeed: 0
   maxSpeed: 45
-  maxSpeedConstant: 45
+  maxSpeedConstant: 50
   crossroadSpeedConstant: 35
   acceleration: 0.08
   brakeForce: 0.75
