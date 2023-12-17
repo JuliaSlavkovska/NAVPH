@@ -1,7 +1,7 @@
+using System;
 using UnityEngine;
-using UnityEngine.Audio;
 
-[System.Serializable]
+[Serializable]
 public class Sound
 {
     public string name;
@@ -10,6 +10,5 @@ public class Sound
     [Range(.1f, 3f)] public float pitch;
     public bool loop;
 
-    [HideInInspector]
-    public AudioSource source;
+    [HideInInspector] public AudioSource source;
 }

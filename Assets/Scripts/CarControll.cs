@@ -1,30 +1,27 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CarControll : MonoBehaviour
 {
-    [Header("Lights")]
-    [SerializeField] private GameObject RightTurns;
-    [SerializeField] private GameObject LeftTurns;
+    [Header("Lights")] [SerializeField] private GameObject RightTurns;
 
-    bool RightTurn = false;
-    bool LeftTurn = false;
+    [SerializeField] private GameObject LeftTurns;
+    private bool LeftTurn;
+    private readonly List<Transform> llights = new();
+
+    private bool RightTurn;
+    private readonly List<Transform> rlights = new();
     private float timer;
-    private List<Transform> rlights = new List<Transform>();
-    private List<Transform> llights = new List<Transform>();
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         foreach (Transform light_signal in RightTurns.transform)
         {
             light_signal.GetComponent<Light>().enabled = false;
             rlights.Add(light_signal);
-            
         }
+
         foreach (Transform light_signal in LeftTurns.transform)
         {
             light_signal.GetComponent<Light>().enabled = false;
@@ -36,7 +33,7 @@ public class CarControll : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         //Right signal
         if (Input.GetKeyDown((KeyCode.Keypad6)))
@@ -52,18 +49,13 @@ public class CarControll : MonoBehaviour
 
 
         //flashing when signal is turn on
-        if (RightTurn)
-        {
-            SignalLightFlashing(rlights);
-        }
-        if (LeftTurn)
-        {
-            SignalLightFlashing(llights);
-        }
-
+        if (RightTurn) SignalLightFlashing(rlights);
+        if (LeftTurn) SignalLightFlashing(llights);
     }
 
-    void SignalLightControl(ref bool oneSignal, List<Transform> oneSignals, ref bool secondSignal, List<Transform> secondSignals) {
+    private void SignalLightControl(ref bool oneSignal, List<Transform> oneSignals, ref bool secondSignal,
+        List<Transform> secondSignals)
+    {
         timer = 0.4f;
         //signal on, turn off
         if (oneSignal)
@@ -94,11 +86,10 @@ public class CarControll : MonoBehaviour
             oneSignal = true;
             timer = 0.4f;
         }
-
     }
 
 
-    void SignalLightFlashing(List<Transform> lights)
+    private void SignalLightFlashing(List<Transform> lights)
     {
         if (timer > 0)
         {
@@ -107,10 +98,8 @@ public class CarControll : MonoBehaviour
 
         if (timer <= 0)
         {
-            foreach (Transform light_signal in lights)
-            {
+            foreach (var light_signal in lights)
                 light_signal.GetComponent<Light>().enabled = !light_signal.GetComponent<Light>().enabled;
-            }
             timer = 0.4f;
         }
     }

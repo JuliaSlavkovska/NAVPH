@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,24 +5,18 @@ public class IndicatorControl : MonoBehaviour
 {
     [SerializeField] private List<Transform> rlights;
     [SerializeField] private List<Transform> llights;
-    private float timer;
-    private bool RightTurn;
     private bool LeftTurn;
+    private bool RightTurn;
+    private float timer;
 
     private void Update()
     {
-        if (LeftTurn)
-        {
-            SignalLightFlashing(llights);
-        }
+        if (LeftTurn) SignalLightFlashing(llights);
 
-        if (RightTurn)
-        {
-            SignalLightFlashing(rlights);
-        }
+        if (RightTurn) SignalLightFlashing(rlights);
     }
-    
-    void SignalLightFlashing(List<Transform> lights)
+
+    private void SignalLightFlashing(List<Transform> lights)
     {
         if (timer > 0)
         {
@@ -33,10 +25,8 @@ public class IndicatorControl : MonoBehaviour
 
         if (timer <= 0)
         {
-            foreach (Transform light_signal in lights)
-            {
+            foreach (var light_signal in lights)
                 light_signal.GetComponent<Light>().enabled = !light_signal.GetComponent<Light>().enabled;
-            }
             timer = 0.3f;
         }
     }
@@ -48,10 +38,8 @@ public class IndicatorControl : MonoBehaviour
             signal.GetComponent<Light>().enabled = state;
         }
         LeftTurn = state;
-
-        
     }
-    
+
     public void RightBlink(bool state)
     {
         foreach (Transform signal in rlights)
@@ -59,8 +47,5 @@ public class IndicatorControl : MonoBehaviour
             signal.GetComponent<Light>().enabled = state;
         }
         RightTurn = state;
-        
-        
     }
-
 }

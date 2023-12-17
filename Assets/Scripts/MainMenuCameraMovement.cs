@@ -15,8 +15,7 @@ public class MainMenuCameraMovement : MonoBehaviour
 
     private void Update()
     {
-        _newPosition = new Vector3(transform.position.x+jump, transform.position.y, transform.position.z+jump);
-        transform.position = Vector3.Lerp(transform.position, _newPosition, Time.deltaTime*lerpSpeed);
+        _newPosition = new Vector3(transform.position.x + jump, transform.position.y, transform.position.z + jump);
+        transform.position = Vector3.Lerp(transform.position, _newPosition, Time.deltaTime * lerpSpeed);
     }
-    
 }

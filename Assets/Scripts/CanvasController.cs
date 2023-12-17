@@ -1,13 +1,11 @@
-
 using System.Collections;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 //script for controlling Canvas
 public class CanvasController : MonoBehaviour
 {
-
     [SerializeField] private TMP_Text _DeliveryPlayer;
     [SerializeField] private Slider _slider;
     [SerializeField] private TMP_Text _DeliveryResults;
@@ -16,9 +14,9 @@ public class CanvasController : MonoBehaviour
     [SerializeField] private GameObject PlayerViewPanel;
     [SerializeField] private GameObject RestartGamePanel;
     [SerializeField] private TMP_Text _Warning;
-    
+
     private MenuController _menuController;
-    
+
     private void Start()
     {
         _menuController = FindObjectOfType<MenuController>();
@@ -28,19 +26,19 @@ public class CanvasController : MonoBehaviour
     {
         _DeliveryPlayer.text = scoreController.Delivery.ToString();
     }
-    
+
     public void UpdateHealthBar(ScoreController scoreController)
     {
         _slider.value = scoreController.Health;
     }
-    
+
     public void UpdateBrokenRule(ScoreController scoreController)
     {
         _Warning.gameObject.SetActive(true);
         _Warning.text = scoreController.BrokenRule;
-        StartCoroutine(ClearWarning ()); // desapearing warning after specific amount of seconds
+        StartCoroutine(ClearWarning()); // desapearing warning after specific amount of seconds
     }
-    
+
     //change Panel object to Gameover from Player screen
     public void GameOver(ScoreController scoreController)
     {
@@ -49,15 +47,12 @@ public class CanvasController : MonoBehaviour
         _GameOverReason.text = _menuController.GameOverReason;
         _DeliveryResults.text = "Sucessful delivery: " + scoreController.Delivery;
         _RulesResults.text = "Broken rules: " + scoreController.BrokenRules;
-
     }
-    
+
     //clear warning
-    IEnumerator ClearWarning()
+    private IEnumerator ClearWarning()
     {
         yield return new WaitForSeconds(3);
         _Warning.gameObject.SetActive(false);
     }
-    
-
 }

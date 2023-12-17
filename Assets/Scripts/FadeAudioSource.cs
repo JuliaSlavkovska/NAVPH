@@ -3,7 +3,8 @@ using UnityEngine;
 
 //Used for Fading audio
 //source: https://johnleonardfrench.com/how-to-fade-audio-in-unity-i-tested-every-method-this-ones-the-best/
-public static class FadeAudioSource {
+public static class FadeAudioSource
+{
     public static IEnumerator StartFade(AudioSource audioSource, float duration, float targetVolume, bool FadeIn)
     {
         float currentTime = 0;
@@ -17,6 +18,7 @@ public static class FadeAudioSource {
         {
             start = audioSource.volume;
         }
+
         while (currentTime < duration)
         {
             currentTime += Time.deltaTime;
@@ -27,6 +29,7 @@ public static class FadeAudioSource {
             }
             yield return null;
         }
+
         yield return null;
     }
 }

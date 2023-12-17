@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum LightColor
 {
@@ -10,11 +6,10 @@ public enum LightColor
     YellowToRed,
     YellowToGreen,
     Green
-};
+}
 
 public class TrafficLight : MonoBehaviour
 {
-
     [SerializeField] private GameObject red;
     [SerializeField] private GameObject yellow;
     [SerializeField] private GameObject green;
@@ -24,23 +19,19 @@ public class TrafficLight : MonoBehaviour
     [SerializeField] private bool startGreen;
     [SerializeField] private GameObject barrier;
     private LightColor currentColor;
-    
+
     public void Start()
     {
         if (startGreen)
-        {
             SetGreen();
-        }
         else
-        {
             SetRed();
-        }
     }
 
     public void Update()
     {
         timer -= Time.deltaTime;
-        if (timer >= 0f) 
+        if (timer >= 0f)
             return;
         switch (currentColor)
         {
@@ -59,7 +50,6 @@ public class TrafficLight : MonoBehaviour
                 SetRed();
                 break;
         }
-
     }
 
     private void SetRed()
@@ -71,32 +61,27 @@ public class TrafficLight : MonoBehaviour
         green.SetActive(false);
         red.SetActive(true);
     }
-    
+
     private void SetYellow()
     {
         timer = timerYellow;
         green.SetActive(false);
         red.SetActive(false);
         yellow.SetActive(true);
-
     }
-    
+
     private void SetGreen()
     {
-        barrier.transform.localPosition = new Vector3(0, 100 ,0);
+        barrier.transform.localPosition = new Vector3(0, 100, 0);
         timer = timerMain;
         currentColor = LightColor.Green;
         yellow.SetActive(false);
         red.SetActive(false);
         green.SetActive(true);
-
     }
 
     public LightColor GetColor()
     {
         return currentColor;
     }
-        
-    
-
 }

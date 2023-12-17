@@ -6,18 +6,19 @@ public class CameraFollow : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float minAngle = -80.0f;
     [SerializeField] private float maxAngle = 60.0f;
-    float yRotate = 0.0f;
 
-    private float eulerx; 
-    private float eulerz; 
+    private float eulerx;
+    private float eulerz;
+    private float yRotate;
     public bool Freeze { get; private set; }
 
-    void Start () {
+    private void Start()
+    {
         eulerx = transform.eulerAngles.x;
         eulerz = transform.eulerAngles.z;
     }
 
-    void Update()
+    private void Update()
     {
         //if game frozen (GameOver scene), stop rotate camera
         if (Freeze is false)
@@ -27,7 +28,7 @@ public class CameraFollow : MonoBehaviour
             transform.localRotation = Quaternion.Euler(eulerx, yRotate, eulerz);
         }
     }
-    
+
 
     //function for setting frozen state
     public void FreezeCam(bool status)

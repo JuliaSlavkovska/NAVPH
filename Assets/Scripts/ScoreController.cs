@@ -4,42 +4,37 @@ using UnityEngine.Events;
 //script for score manage
 public class ScoreController : MonoBehaviour
 {
-
     public static ScoreController instance;
-    
-    public int Delivery { get; private set; }
-    public float Health { get; private set; }
-    public string BrokenRule { get; private set; }
-    public float BrokenRules { get; private set; }
-    
+
     [SerializeField] private CameraFollow camera;
 
     public UnityEvent OnScoreChanged;
     public UnityEvent OnPickUpReached;
     public UnityEvent OnCrash;
     public UnityEvent OnBrokenRule;
-    
-    private Ray ray;
-    private float _start_time;
 
 
     private AudioManager _audioManager;
     private MenuController _menuController;
+    private float _start_time;
     private float damage;
+
+    private Ray ray;
+
+    public int Delivery { get; private set; }
+    public float Health { get; private set; }
+    public string BrokenRule { get; private set; }
+    public float BrokenRules { get; private set; }
 
     private void Awake()
     {
         if (instance == null)
-        {
             instance = this;
-        }
         else
-        {
             Destroy(gameObject);
-        }
     }
-    
-    void Start()
+
+    private void Start()
     {
         Health = 1f;
         Delivery = 0;
@@ -47,54 +42,18 @@ public class ScoreController : MonoBehaviour
         BrokenRules = 0;
         _audioManager = FindObjectOfType<AudioManager>();
         _menuController = FindObjectOfType<MenuController>();
-        
     }
-    
+
     private void Update()
     {
-        if (!camera.Freeze)
-        {
+        if (!camera.Freeze) 
             CheckOnTrack();
-        }
-    }
-
-    public void CheckTurn()
-    {
-        ray = new Ray(transform.position, -transform.up);
-        if (Physics.Raycast(ray, out RaycastHit hit) && !hit.collider.CompareTag("Turn"))
-        {
-            RuleBroken("Blinker not activated");
-        }
-    }
-
-    //checking if car did not go off the route for more than 1 second
-    private void CheckOnTrack()
-    {
-        ray = new Ray(transform.position, -transform.up);
-        if (Physics.Raycast(ray, out RaycastHit hit))
-        {
-            if(hit.collider.CompareTag("Grass"))
-            {
-                if (Time.time - _start_time > 1)
-                {
-                    RuleBroken("Get back on road!");
-                    _start_time = Time.time;
-                }
-                
-                OnScoreChanged.Invoke();
-            }
-            if(hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Turn"))
-            {
-                _start_time = Time.time;
-            }
-            
-        }
     }
 
 
     //check if user picked up item
     private void OnTriggerEnter(Collider other)
-    {     
+    {
         if (other.CompareTag("PickUp"))
         {
             Delivery++;
@@ -105,34 +64,59 @@ public class ScoreController : MonoBehaviour
         else if (other.CompareTag("Yield"))
         {
             Debug.Log("Rule broken");
-            RuleBroken("You didn't give the right of way!");        
+            RuleBroken("You didn't give the right of way!");
         }
-        
-        else if (other.CompareTag("Cube") || 
-            other.CompareTag("Car") ||
-            other.CompareTag("Prop"))
+
+        else if (other.CompareTag("Cube") ||
+                 other.CompareTag("Car") ||
+                 other.CompareTag("Prop"))
         {
             initializeGameOver("Crash!");
         }
-
     }
 
-    
+    public void CheckTurn()
+    {
+        ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out var hit) && !hit.collider.CompareTag("Turn")) 
+            RuleBroken("Blinker not activated");
+    }
+
+    //checking if car did not go off the route for more than 1 second
+    private void CheckOnTrack()
+    {
+        ray = new Ray(transform.position, -transform.up);
+        if (Physics.Raycast(ray, out var hit))
+        {
+            if (hit.collider.CompareTag("Grass"))
+            {
+                if (Time.time - _start_time > 1)
+                {
+                    RuleBroken("Get back on road!");
+                    _start_time = Time.time;
+                }
+
+                OnScoreChanged.Invoke();
+            }
+
+            if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Turn")) 
+                _start_time = Time.time;
+        }
+    }
+
+
     //dorobit kedy sa realne ma odratat zdravie
     public void RuleBroken(string reason)
     {
         BrokenRules++;
-        Health-=damage;
+        Health -= damage;
         _audioManager.Play("Fail");
         OnScoreChanged.Invoke();
         BrokenRule = reason;
         OnBrokenRule.Invoke();
         //Game Over
-        if (Health <= 0)
-        {
+        if (Health <= 0) 
             initializeGameOver("Out of lives!");
-        }
-
     }
 
     public void initializeGameOver(string reason)
@@ -151,10 +135,9 @@ public class ScoreController : MonoBehaviour
     {
         camera.FreezeCam(status);
     }
-    
+
     public bool getCamStatus()
     {
         return camera.Freeze;
     }
-
 }
