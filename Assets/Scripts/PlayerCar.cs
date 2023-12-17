@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         _audioManager = FindObjectOfType<AudioManager>();
         _scoreController = FindObjectOfType<ScoreController>();
-        _audioManager.Play("CarIdle");
+        //_audioManager.Play("CarIdle");
     }
 
     // Update is called once per frame
@@ -100,18 +100,23 @@ public class PlayerController : MonoBehaviour
             }
         }
 
+        /* Tento zvuk sposoboval praskanie, rozhdoli sme sa ho preto odstranit
+         //Zvuk motora
+         //Zvuk pri pridanvani plynu
+         
         if (Input.GetKeyDown(KeyCode.W))
         {
             //_audioManager.Play("CarMovement");
-            _audioManager.FadeIn("CarMovement", 2, 1f);
-            _audioManager.FadeOut("CarIdle", 2, 0);
+            //_audioManager.FadeIn("CarMovement", 2, 1f);
+            //_audioManager.FadeOut("CarIdle", 2, 0);
         }
         if (Input.GetKeyUp(KeyCode.W))
         {
             //_audioManager.Stop("CarMovement");
-            _audioManager.FadeOut("CarMovement", 0.5f, 0);
-            _audioManager.FadeIn("CarIdle", 0.5f, 0.6f);
+            //_audioManager.FadeOut("CarMovement", 0.5f, 0);
+            //_audioManager.FadeIn("CarIdle", 0.5f, 0.6f);
         }
+        */
 
         //WASD
         if (Input.GetKey(KeyCode.W))
@@ -138,7 +143,7 @@ public class PlayerController : MonoBehaviour
                         if (!LeftTurn)
                         {
                             // Turning without a blinker
-                            _scoreController.RuleBroken();
+                            _scoreController.RuleBroken("Blinker not activated");
                         }                    }
                 }
             }

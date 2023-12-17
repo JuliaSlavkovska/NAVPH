@@ -9,12 +9,14 @@ public class CanvasController : MonoBehaviour
 {
 
     [SerializeField] private TMP_Text _DeliveryPlayer;
+    
     [SerializeField] private Slider _slider;
     [SerializeField] private TMP_Text _DeliveryResults;
     [SerializeField] private TMP_Text _RulesResults;
     [SerializeField] private TMP_Text _GameOverReason;
     [SerializeField] private GameObject PlayerViewPanel;
     [SerializeField] private GameObject RestartGamePanel;
+    [SerializeField] private TMP_Text _Warning;
     
     private MenuController _menuController;
 
@@ -34,6 +36,13 @@ public class CanvasController : MonoBehaviour
         _slider.value = scoreController.Health;
     }
     
+    public void UpdateBrokenRule(ScoreController scoreController)
+    {
+        _Warning.gameObject.SetActive(true);
+        _Warning.text = scoreController.BrokenRule;
+        StartCoroutine(EnableGameoverPanel ());
+    }
+    
     public void GameOver(ScoreController scoreController)
     {
         PlayerViewPanel.SetActive(false);
@@ -42,6 +51,12 @@ public class CanvasController : MonoBehaviour
         _DeliveryResults.text = "Sucessful delivery: " + scoreController.Delivery;
         _RulesResults.text = "Broken rules: " + scoreController.BrokenRules;
 
+    }
+    
+    IEnumerator EnableGameoverPanel()
+    {
+        yield return new WaitForSeconds(3);
+        _Warning.gameObject.SetActive(false);
     }
     
 

@@ -12,6 +12,7 @@ public class ScoreController : MonoBehaviour
     
     public int Delivery { get; private set; }
     public float Health { get; private set; }
+    public string BrokenRule { get; private set; }
     public float BrokenRules { get; private set; }
     
     [SerializeField] private CameraFollow camera;
@@ -19,6 +20,7 @@ public class ScoreController : MonoBehaviour
     public UnityEvent OnScoreChanged;
     public UnityEvent OnPickUpReached;
     public UnityEvent OnCrash;
+    public UnityEvent OnBrokenRule;
     
     private Ray ray;
     private float _start_time;
@@ -64,7 +66,7 @@ public class ScoreController : MonoBehaviour
         ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit) && !hit.collider.CompareTag("Turn"))
         {
-            RuleBroken();
+            RuleBroken("Idk");
         }
     }
 
@@ -77,7 +79,7 @@ public class ScoreController : MonoBehaviour
             {
                 if (Time.time - _start_time > 1)
                 {
-                    RuleBroken();
+                    RuleBroken("Get back on road!");
                     _start_time = Time.time;
                 }
                 
@@ -104,7 +106,7 @@ public class ScoreController : MonoBehaviour
         else if (other.CompareTag("Yield"))
         {
             Debug.Log("Rule broken");
-            RuleBroken();        
+            RuleBroken("You didn't give the right of way!");        
         }
         
         else if (other.CompareTag("Cube") || 
@@ -118,13 +120,14 @@ public class ScoreController : MonoBehaviour
 
     
     //dorobit kedy sa realne ma odratat zdravie
-    public void RuleBroken()
+    public void RuleBroken(string reason)
     {
         BrokenRules++;
         Health-=damage;
         _audioManager.Play("Fail");
         OnScoreChanged.Invoke();
-        
+        BrokenRule = reason;
+        OnBrokenRule.Invoke();
         //Game Over
         if (Health <= 0)
         {
