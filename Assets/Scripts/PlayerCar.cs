@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float speed = 0;
     [SerializeField] float maxSpeed;
     [SerializeField] float rotationAngle;
+    [SerializeField] private float BrakeForce;
     
 
     private AudioManager _audioManager;
@@ -93,7 +94,7 @@ public class PlayerController : MonoBehaviour
         {
             if (speed > 0)
             {
-                speed -= 0.2f;
+                speed -= BrakeForce;
             }else
             {
                 speed += 0.2f;
@@ -158,7 +159,7 @@ public class PlayerController : MonoBehaviour
         { 
             if (speed > 0)
             {
-                speed -= 0.2f;
+                speed -= BrakeForce;
             }
             else if(speed >= -1*maxSpeed)
             {

@@ -3641,7 +3641,8 @@ MonoBehaviour:
   EasterEgg: {fileID: 0}
   speed: 0
   maxSpeed: 30
-  rotationAngle: 0
+  rotationAngle: 55
+  BrakeForce: 0
 --- !u!54 &5900509579885921397
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3751,6 +3752,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnBrokenRule:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1883954488496355029
 BoxCollider:
   m_ObjectHideFlags: 0
