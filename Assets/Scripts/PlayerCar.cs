@@ -143,8 +143,9 @@ public class PlayerController : MonoBehaviour
                         if (!LeftTurn)
                         {
                             // Turning without a blinker
-                            _scoreController.RuleBroken("Blinker not activated");
-                        }                    }
+                            _scoreController.CheckTurn();
+                        }                    
+                    }
                 }
             }
 
@@ -180,7 +181,7 @@ public class PlayerController : MonoBehaviour
                     {
                         if (!RightTurn)
                         {
-                            Debug.Log("Illegal turning detected!");
+                            _scoreController.CheckTurn();
                         }
                         
                     }
