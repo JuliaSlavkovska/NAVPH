@@ -63,7 +63,7 @@ public class ScoreController : MonoBehaviour
         ray = new Ray(transform.position, -transform.up);
         if (Physics.Raycast(ray, out RaycastHit hit) && !hit.collider.CompareTag("Turn"))
         {
-            RuleBroken("Idk");
+            RuleBroken("Blinker not activated");
         }
     }
 
